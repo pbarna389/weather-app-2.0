@@ -42,7 +42,7 @@ const CurrentWeather = ():JSX.Element => {
                         <h5>Cloud: {currentData.cloud}</h5>
                     </div>
                 </div>
-                <CurrentStatus isDay={true} code={1282} />
+                <CurrentStatus isDay={currentData.is_day} code={currentData.condition.code} />
             </>
             : null
         }

@@ -69,8 +69,8 @@ export const RainyCloud:React.FC<ISVG> = ( {width = 80} ) => {
     return (
         <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" height={width} width={width} xmlns="http://www.w3.org/2000/svg">
             <linearGradient id="cloud1" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#2f2f2f"/>
-                <stop offset="40%" stopColor="#606060"/>                    
+                <stop offset="0%" stopColor="#02248f"/>
+                <stop offset="40%" stopColor="#1e44bb"/>                    
                 <stop offset="100%" stopColor="#DFDFDF"/>
             </linearGradient>
             <path fill="url(#cloud1)" d="M4.158 12.025a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 1 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm3 0a.5.5 0 0 1 .316.633l-1 3a.5.5 0 1 1-.948-.316l1-3a.5.5 0 0 1 .632-.317zm3 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 1 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm3 0a.5.5 0 0 1 .316.633l-1 3a.5.5 0 1 1-.948-.316l1-3a.5.5 0 0 1 .632-.317zm.247-6.998a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 11H13a3 3 0 0 0 .405-5.973z"></path>
