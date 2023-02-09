@@ -1,0 +1,31 @@
+
+.status-wrapper {
+    position: relative;
+    width: 25vw;
+    border: 1px solid white;
+
+    .icon-1, .icon-2, .icon-3, .icon-4 {
+        position: absolute;
+        transform: translate(-50%, -50%)
+    }
+
+    .icon-1 {
+        left: 50%;
+        z-index: 0;
+    };
+
+    .icon-2 {
+        top: 54%;
+        left: 42%;
+        z-index: 1;
+    }
+
+    .icon-3 {
+        position: absolute;
+        top: 55%;
+        left: 55%;
+        z-index: 1;
+    }
+
+
+}

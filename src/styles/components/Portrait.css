@@ -1,0 +1,9 @@
+.portrait {
+  background-repeat: no-repeat;
+  height: 10rem;
+  width: 10rem;
+  background-size: cover;
+  background-position: right;
+  border-radius: 50%;
+  opacity: 0.8;
+}/*# sourceMappingURL=Portrait.css.map */

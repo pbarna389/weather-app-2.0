@@ -1,0 +1,29 @@
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 15rem;
+  z-index: 0;
+}
+
+input {
+  position: relative;
+  width: 10rem;
+  color: black;
+}
+
+.autocomplete {
+  background-color: white;
+  width: 10rem;
+}
+.autocomplete p {
+  z-index: 1;
+  transition: all 0.5s ease-in;
+  text-align: center;
+  color: black;
+  cursor: pointer;
+}
+.autocomplete p:hover {
+  background-color: rgba(85, 85, 245, 0.401);
+}/*# sourceMappingURL=InputField.css.map */
