@@ -1,12 +1,16 @@
-.loc-basic {
-    display: flex;
-    gap: 1rem;
+.loc-wrapper {
+    width: 25vw;
 
-    border: 1px solid white;
-    padding: 2rem;
-}
-
-.loc-details {
-    padding: 2rem;
-    border: 2px solid white;
+    .loc-basic {
+        display: flex;
+        gap: 1rem;
+    
+        border: 1px solid white;
+        padding: 2rem;
+    }
+    
+    .loc-details {
+        padding: 2rem;
+        border: 2px solid white;
+    }
 }

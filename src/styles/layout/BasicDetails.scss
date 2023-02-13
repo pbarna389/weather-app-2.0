@@ -1,6 +1,10 @@
 .currentWeather-wrapper {
-    width: 95vw;
+    width: 100vw;
     display: flex;
     position: absolute;
     overflow: hidden;
+
+    .forecast-wrapper {
+        height: inherit;
+    }
 }

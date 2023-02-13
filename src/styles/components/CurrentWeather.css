@@ -1,11 +1,13 @@
-.loc-basic {
+.loc-wrapper {
+  width: 25vw;
+}
+.loc-wrapper .loc-basic {
   display: flex;
   gap: 1rem;
   border: 1px solid white;
   padding: 2rem;
 }
-
-.loc-details {
+.loc-wrapper .loc-details {
   padding: 2rem;
   border: 2px solid white;
 }/*# sourceMappingURL=CurrentWeather.css.map */

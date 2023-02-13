@@ -139,3 +139,30 @@ export const PelletCloud:React.FC<ISVG> = ( { width = 80 } ) => {
         </svg>
     )
 }
+
+export const Arrow1:React.FC<ISVG> = ( { width = 80} ) => {
+    return (
+        <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height={width} width={width} xmlns="http://www.w3.org/2000/svg" data-arrowleft={"forecast"}>
+            <linearGradient id="arrow1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#ffffff"/>
+                <stop offset="100%" stopColor="#6e1bde"/>
+            </linearGradient>
+            <path fill="none" d="M0 0h24v24H0z" data-arrowleft={"forecast"}></path>
+            <path fill="url(#arrow1)" d="M17.77 3.77L16 2 6 12l10 10 1.77-1.77L9.54 12z" data-arrowleft={"forecast"}></path>
+        </svg>
+    )
+}
+
+export const Arrow2:React.FC<ISVG> = ( { width = 80} ) => {
+    return (
+        <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height={width} width={width} xmlns="http://www.w3.org/2000/svg" data-arrowright={"forecast"}>
+            <linearGradient id="arrow1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#ffffff"/>
+                <stop offset="100%" stopColor="#6e1bde"/>
+            </linearGradient>
+            <path fill="none" d="M0 0h24v24H0V0z" data-arrowright={"forecast"}></path>
+            <path fill="url(#arrow1)" d="M6.23 20.23L8 22l10-10L8 2 6.23 3.77 14.46 12z" data-arrowright={"forecast"}></path>
+        </svg>
+    )
+}
+

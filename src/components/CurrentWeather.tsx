@@ -1,26 +1,11 @@
-import { useState, useEffect, useContext } from "react"
-import { IWeatherContext, IlocData, IcurrentData } from "../@types/weather"
-import { weatherContext } from "../context/weatherContext";
+import { ICurrentWeather } from "../@types/weather"
 import Portrait from "./Portrait";
-import CurrentStatus from "./CurrentStatus";
 
-import "../styles/components/CurrentWeather.css"
 
-const CurrentWeather = ():JSX.Element => {
-    const [locData, setLocaData] = useState<IlocData>();
-    const [currentData, setCurrentData] = useState<IcurrentData>();
+import "../styles/components/CurrentWeather.css";
 
-    const {
-        data
-    } = useContext(weatherContext) as IWeatherContext
 
-    useEffect(() => {
-        if (data) {
-            setLocaData(data.location)
-            setCurrentData(data.current);
-        }
-    }, [data])
-
+const CurrentWeather:React.FC<ICurrentWeather> = ({ locData, currentData}):JSX.Element => {
     return (
         <>
         {
@@ -42,7 +27,6 @@ const CurrentWeather = ():JSX.Element => {
                         <h5>Cloud: {currentData.cloud}</h5>
                     </div>
                 </div>
-                <CurrentStatus isDay={currentData.is_day} code={currentData.condition.code} />
             </>
             : null
         }

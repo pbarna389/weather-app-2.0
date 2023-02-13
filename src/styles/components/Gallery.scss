@@ -1,0 +1,38 @@
+.forecast-wrapper {
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    overflow: hidden;
+    width: 50vw;
+    z-index: 2;
+    scroll-behavior: smooth;
+    gap: 2rem;
+
+    .status-wrapper {
+        border: none;
+    }
+
+    .arrow-left, .arrow-right {
+        position: absolute;
+        z-index: 3;
+
+        svg {
+            z-index: -1;
+            path {
+                z-index: -1;
+            }
+        }
+    };
+
+    .arrow-left {
+        top: 10%;
+        left: 50%;
+    }
+
+    .arrow-right {
+        top: 10%;
+        right: 0;
+    }
+
+}
