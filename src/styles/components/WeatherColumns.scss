@@ -6,17 +6,18 @@
     height: 22rem;
 
     &:hover {
-        .status-wrapper {
+        .status-wrapper, p {
             opacity: 1;
             height: 3rem;
         }
     }
 
-    .status-wrapper {
+    .status-wrapper, p {
         opacity: 0;
         height: 0;
         transition: all 0.2s ease-in;
     }
+
 }
 
 .column {

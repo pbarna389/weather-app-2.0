@@ -2,12 +2,46 @@
 
     display: flex;
     align-items: flex-end;
-    justify-content: flex-start;
+    justify-content: center;
     overflow: hidden;
     width: 50vw;
     z-index: 2;
-    scroll-behavior: smooth;
     gap: 2rem;
+
+    .columns {
+        display: flex;
+        align-items: center;
+        
+        &.goesToRight {
+            position: relative;
+            transform: translateX(200%);
+            transition: transform 0.2s ease-in;
+        };
+
+        &.comesFromLeft {
+            position: relative;
+            left: -250%;
+            transform: translateX(313.2%);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        &.goesToLeft {
+            position: relative;
+            transform: translateX(-200%);
+            transition: transform 0.2s ease-in;
+        };
+
+        &.comesFromRight {
+            position: relative;
+            left: 250%;
+            transform: translateX(-313%);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        // &.goesToRight {
+        //     translate: 800px;
+        // }
+    };
 
     .status-wrapper {
         border: none;

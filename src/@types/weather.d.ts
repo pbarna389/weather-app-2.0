@@ -106,6 +106,7 @@ export interface IWeatherColumnProps extends ICurrentStatus {
     minTemp: number,
     maxTemp: number,
     currentTemp: number,
+    time: string,
 }
 
 export interface IGalleryProps {

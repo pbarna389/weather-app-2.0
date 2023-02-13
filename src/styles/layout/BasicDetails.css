@@ -1,7 +1,6 @@
 .currentWeather-wrapper {
   width: 100vw;
   display: flex;
-  position: absolute;
   overflow: hidden;
 }
 .currentWeather-wrapper .forecast-wrapper {

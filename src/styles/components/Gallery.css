@@ -1,12 +1,37 @@
 .forecast-wrapper {
   display: flex;
   align-items: flex-end;
-  justify-content: flex-start;
+  justify-content: center;
   overflow: hidden;
   width: 50vw;
   z-index: 2;
-  scroll-behavior: smooth;
   gap: 2rem;
+}
+.forecast-wrapper .columns {
+  display: flex;
+  align-items: center;
+}
+.forecast-wrapper .columns.goesToRight {
+  position: relative;
+  transform: translateX(200%);
+  transition: transform 0.2s ease-in;
+}
+.forecast-wrapper .columns.comesFromLeft {
+  position: relative;
+  left: -250%;
+  transform: translateX(313.2%);
+  transition: transform 0.2s ease-in-out;
+}
+.forecast-wrapper .columns.goesToLeft {
+  position: relative;
+  transform: translateX(-200%);
+  transition: transform 0.2s ease-in;
+}
+.forecast-wrapper .columns.comesFromRight {
+  position: relative;
+  left: 250%;
+  transform: translateX(-313%);
+  transition: transform 0.2s ease-in-out;
 }
 .forecast-wrapper .status-wrapper {
   border: none;

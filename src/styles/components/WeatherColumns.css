@@ -5,11 +5,11 @@
   flex-direction: column;
   height: 22rem;
 }
-.column-wrapper:hover .status-wrapper {
+.column-wrapper:hover .status-wrapper, .column-wrapper:hover p {
   opacity: 1;
   height: 3rem;
 }
-.column-wrapper .status-wrapper {
+.column-wrapper .status-wrapper, .column-wrapper p {
   opacity: 0;
   height: 0;
   transition: all 0.2s ease-in;
