@@ -1,0 +1,14 @@
+.forecast-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 15rem;
+  margin: 0 2rem;
+  gap: 2.5rem;
+  border-radius: 10px;
+}
+.forecast-card .status-wrapper {
+  border: none;
+}/*# sourceMappingURL=ForecastCard.css.map */

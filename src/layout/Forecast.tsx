@@ -1,22 +1,30 @@
 import { useContext, useState, useEffect } from 'react';
 import { weatherContext } from '../context/weatherContext';
-import { IWeatherContext, IforecastDays} from '../@types/weather';
+import { IWeatherContext, IforecastDays, Iastro} from '../@types/weather';
+import ForecastCard from '../components/ForecastCard';
+
+import "../styles/layout/Forecast.css";
 
 const Forecast = () => {
-    const [forecastDays, setForecastDays] = useState<IforecastDays[]>();
+    const [forecastDays, setForecastDays] = useState<any[]>();
     const {forecast} = useContext(weatherContext) as IWeatherContext;
 
     useEffect(() => {
         if (forecast) {
-            const days:IforecastDays[] = [];
-            forecast.forecast.forecastday.forEach((el:any) => days.push(el.day));
-            setForecastDays(days)
-        };
+            const newArr:any[] = [];
+            forecast.forecast.forecastday.forEach((el:any) => newArr.push(el));
+            setForecastDays(newArr)
+        }
     }, [forecast])
 
-    if (forecast) forecast.forecast.forecastday.forEach((el:any) => console.log(el.day))
     return (
-        <div className="fullForecast-wrapper">Forecast</div>
+        <div className="fullForecast-wrapper">
+            {
+                forecastDays ?
+                forecastDays.map(el => <ForecastCard key={el.date} astro={el.astro} code={el.day.condition.code} isDay={true} />)
+                :null
+            }
+        </div>
     )
 }
 

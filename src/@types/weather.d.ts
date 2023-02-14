@@ -139,7 +139,20 @@ export interface IWeatherColumnProps extends ICurrentStatus {
 export interface IGalleryProps {
     forecastHours: IForecastHours[];
 }
+export interface Iastro {
+    sunrise: string,
+    sunset: string,
+    moonrise: string,
+    moonset: string,
+    moon_phase: string,
+    moon_illumination: string,
+    is_moon_up: boolean,
+    is_sun_up: boolean,
+}
 
+export interface IForecastCardProps extends ICurrentStatus {
+    astro: Iastro
+}
 //REDUCER
 
 export type ActionType = {

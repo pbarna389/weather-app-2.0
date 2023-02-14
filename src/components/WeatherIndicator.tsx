@@ -1,36 +1,25 @@
-import { useState, useEffect, useContext } from "react";
-import { weatherContext } from "../context/weatherContext";
-import { IWeatherContext } from "../@types/weather";
+import { useState, useEffect } from "react";
+import { Iastro } from "../@types/weather";
 import { SunRise, SunSet, MoonRise, MoonSet } from "../assets/React-Icons-modified/SVGs";
-import IconContainer from "../components/IconContainer";
+import IconContainer from "./IconContainer";
 import "../styles/layout/WeatherIndicator.css";
 
-interface Iastro {
-    sunrise: string,
-    sunset: string,
-    moonrise: string,
-    moonset: string,
-    moon_phase: string,
-    moon_illumination: string,
-    is_moon_up: boolean,
-    is_sun_up: boolean,
+interface IWeatherIndicatorProps {
+    astro: Iastro
 }
 
-const WeatherIndicator = () => {
+const WeatherIndicator:React.FC<IWeatherIndicatorProps> = ({ astro }) => {
     const [astroData, setAstroData] = useState<Iastro>();
     const [sunrise, setSunrise] = useState<number[]>();
     const [sunset, setSunSet] = useState<number[]>();
     const [moonrise, setMoonrise] = useState<number[]>();
     const [moonset, setMoonset] = useState<number[]>();
-    
-
-    const { data } = useContext(weatherContext) as IWeatherContext;
 
     useEffect(() => {
-        if (data) {
-            setAstroData(data.forecast.forecastday[0].astro);
+        if (astro) {
+            setAstroData(astro);
         }
-    }, [data]);
+    }, [astro]);
 
     useEffect(() => {
         setSunTimes();
@@ -88,7 +77,7 @@ const WeatherIndicator = () => {
 
     return (
         <>{
-            data ?
+            astroData ?
                 <div className="weather-indicator">
                     <IconContainer type="sun" sunrise={sunrise} sunset={sunset} rise={true}>
                         <SunRise width={50} />

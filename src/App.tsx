@@ -1,6 +1,6 @@
 import InputField from "./components/InputField";
 import BasicDetails from "./layout/BasicDetails";
-import WeatherIndicator from "./layout/WeatherIndicator";
+import SunMoonMeter from "./layout/SunMoonMeter";
 import Forecast from "./layout/Forecast";
 import "./App.css";
 
@@ -10,7 +10,7 @@ function App():JSX.Element {
     <div className="App">
       <InputField />
       <BasicDetails />
-      <WeatherIndicator />
+      <SunMoonMeter />
       <Forecast />
     </div>
   )
