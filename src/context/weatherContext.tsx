@@ -12,11 +12,12 @@ const WeatherContextProvider:React.FC<IContextProps> = ({ children }) => {
     const [query, setQuery] = useState<string>("");
     const [suggestions, setSuggestions] = useState<any[]>([]);
     const [location, setLocation] = useState<string>("");
+
     const debounceQuery = useDebounceValue(query, 250);
-    
 
     const { autoComplete } = useFetch("autocomplete", location,`${WEATHER_URL}search.json?key=${WEATHER_KEY}&q=${debounceQuery}`, { method: 'GET'}, debounceQuery.length);
     const { data } = useFetch('data', location, `${WEATHER_URL}forecast.json?key=${WEATHER_KEY}&q=${location.toLowerCase()}&days=1&aqi=no&alerts=no`);
+    const { forecast } = useFetch('forecast', location, `${WEATHER_URL}forecast.json?key=${WEATHER_KEY}&q=${location.toLowerCase()}&days=6&aqi=no&alerts=no`)
 
     useEffect(() => {
         setSuggestions([]);
@@ -40,7 +41,8 @@ const WeatherContextProvider:React.FC<IContextProps> = ({ children }) => {
             suggestions,
             setLocation,
             location,
-            data
+            data,
+            forecast
         }}>
             {children}
         </weatherContext.Provider>

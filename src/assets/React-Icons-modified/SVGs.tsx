@@ -168,7 +168,7 @@ export const Arrow2:React.FC<ISVG> = ( { width = 80} ) => {
 
 export const SunRise:React.FC<ISVG> = ({ width = 80}) => {
     return (
-        <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 30 30" height={width} width={width} xmlns="http://www.w3.org/2000/svg">
+        <svg stroke="currentColor" fill="currentColor" strokeWidth="0" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 30 30" height={width} width={width} xmlns="http://www.w3.org/2000/svg">
             <linearGradient id="sun" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#f0d024"/>
                 <stop offset="100%" stopColor="#f98a06"/>
@@ -199,7 +199,7 @@ export const SunRise:React.FC<ISVG> = ({ width = 80}) => {
 
 export const SunSet:React.FC<ISVG> = ({ width = 80}) => {
     return (
-        <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 30 30" height={width} width={width} xmlns="http://www.w3.org/2000/svg">
+        <svg stroke="currentColor" fill="currentColor" strokeWidth="0" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 30 30" height={width} width={width} xmlns="http://www.w3.org/2000/svg">
             <linearGradient id="sun" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#f0d024"/>
                 <stop offset="100%" stopColor="#f98a06"/>
@@ -230,7 +230,7 @@ export const SunSet:React.FC<ISVG> = ({ width = 80}) => {
 
 export const MoonRise:React.FC<ISVG> = ({ width = 80}) => {
     return (
-        <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 30 30" height={width} width={width} xmlns="http://www.w3.org/2000/svg">
+        <svg stroke="currentColor" fill="currentColor" strokeWidth="0" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 30 30" height={width} width={width} xmlns="http://www.w3.org/2000/svg">
             <linearGradient id="moon" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#ffffff"/>
                 <stop offset="100%" stopColor="#6e1bde"/>
@@ -249,7 +249,7 @@ export const MoonRise:React.FC<ISVG> = ({ width = 80}) => {
 
 export const MoonSet:React.FC<ISVG> = ({ width = 80}) => {
     return (
-        <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 30 30" height={width} width={width} xmlns="http://www.w3.org/2000/svg">
+        <svg stroke="currentColor" fill="currentColor" strokeWidth="0" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 30 30" height={width} width={width} xmlns="http://www.w3.org/2000/svg">
             <linearGradient id="moon" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#ffffff"/>
                 <stop offset="100%" stopColor="#6e1bde"/>

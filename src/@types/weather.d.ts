@@ -21,6 +21,7 @@ export interface IWeatherContext {
     setLocation: React.Dispatch<React.SetStateAction<string>>
     location: string,
     data: any,
+    forecast: any,
 };
 
 export interface ICurrentWeather {
@@ -102,6 +103,26 @@ export interface IForecastHours {
     uv: number
 };
 
+export interface IforecastDays {
+    avghumidity: number,
+    avgtemp_c: number,
+    avgvis_km: number,
+    avgvis_miles: number,
+    condition: Icondition,
+    daily_chance_of_rain: number,
+    daily_chance_of_snow: number,
+    daily_will_it_rain: number,
+    daily_will_it_snow: number,
+    maxtemp_c: number,
+    maxwind_kph: number,
+    maxwind_mph: number,
+    mintemp_c: number,
+    totalprecip_in: number,
+    totalprecip_mm: number,
+    totalsnow_cm: number,
+    uv: number,
+}
+
 export interface ICurrentStatus {
     code: number,
     isDay: boolean,
@@ -117,4 +138,11 @@ export interface IWeatherColumnProps extends ICurrentStatus {
 
 export interface IGalleryProps {
     forecastHours: IForecastHours[];
+}
+
+//REDUCER
+
+export type ActionType = {
+    type: "loading" | "fetchedAuto" | "fetchedData" | "fetchedPicture" | "fetchedForecast" | "error",
+    payload: any;
 }

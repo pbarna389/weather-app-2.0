@@ -3,8 +3,7 @@ import { useEffect, useReducer } from "react";
 import { initialState } from "../reducers/fetchReducer";
 import fetchReducer from "../reducers/fetchReducer";
 
-
-function useFetch (type: "data" | "picture" | "autocomplete", location: string | undefined, url?: string, options?: RequestInit, length?: number) {  
+function useFetch (type: "data" | "picture" | "autocomplete" | "forecast", location: string | undefined, url?: string, options?: RequestInit, length?: number) {  
     const [state, dispatch] = useReducer(fetchReducer, initialState);
     const controller = new AbortController();
 
@@ -99,6 +98,34 @@ function useFetch (type: "data" | "picture" | "autocomplete", location: string |
             }
         }
 
+        if (type === "forecast") {
+            if (location) {
+                const fetchData = async() => {
+                    try {
+                        const response = await fetch(url, options)
+                        
+                        if(!response.ok) {
+                            throw new Error(response.statusText)
+                        }
+            
+                        const data = await response.json();
+                        console.log(data);
+                        if (!data) {
+                            dispatch({type: "fetchedForecast", payload: null})
+                        }
+
+                        dispatch({type: "fetchedForecast", payload: data})
+
+                    } catch(error) {
+                        dispatch({type: "fetchedForecast", payload: null})
+                        console.log(error);
+                        controller.abort('cancel')
+                    }
+                };
+                fetchData();
+            }
+        }
+
         return () => controller.abort("cancel request")
     }, [location])
 
@@ -106,7 +133,8 @@ function useFetch (type: "data" | "picture" | "autocomplete", location: string |
         "autoComplete": state.autoComplete,
         "data": state.data,
         "picture": state.picture,
-        "error": state.error
+        "error": state.error,
+        "forecast": state.forecast
     }
 };
 

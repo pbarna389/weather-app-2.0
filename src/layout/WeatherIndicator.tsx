@@ -87,20 +87,25 @@ const WeatherIndicator = () => {
 
 
     return (
-        <div className="weather-indicator">
-            <IconContainer type="sun" sunrise={sunrise} sunset={sunset} rise={true}>
-                <SunRise width={50} />
-            </IconContainer>
-            <IconContainer type="sun" sunrise={sunrise} sunset={sunset} rise={false}>
-                <SunSet width={50} />
-            </IconContainer>
-            <IconContainer type="moon" moonrise={moonrise} moonset={moonset} rise={true}>
-                <MoonRise width={50} />
-            </IconContainer>
-            <IconContainer type="moon" moonrise={moonrise} moonset={moonset} rise={false}>
-                <MoonSet width={50} />
-            </IconContainer>
-        </div>
+        <>{
+            data ?
+                <div className="weather-indicator">
+                    <IconContainer type="sun" sunrise={sunrise} sunset={sunset} rise={true}>
+                        <SunRise width={50} />
+                    </IconContainer>
+                    <IconContainer type="sun" sunrise={sunrise} sunset={sunset} rise={false}>
+                        <SunSet width={50} />
+                    </IconContainer>
+                    <IconContainer type="moon" moonrise={moonrise} moonset={moonset} rise={true}>
+                        <MoonRise width={50} />
+                    </IconContainer>
+                    <IconContainer type="moon" moonrise={moonrise} moonset={moonset} rise={false}>
+                        <MoonSet width={50} />
+                    </IconContainer>
+                </div>
+            : null
+        }
+        </>
     )
 }
 

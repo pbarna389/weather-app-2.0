@@ -14,8 +14,10 @@ input {
 }
 
 .autocomplete {
+    position: absolute;
     background-color: white;
     width: 10rem;
+    top: 1rem;
     p {
         z-index: 1;
         transition: all 0.5s ease-in;
