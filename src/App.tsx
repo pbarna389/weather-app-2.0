@@ -1,5 +1,6 @@
 import InputField from "./components/InputField";
 import BasicDetails from "./layout/BasicDetails";
+import WeatherIndicator from "./layout/WeatherIndicator";
 import "./App.css";
 
 function App():JSX.Element {
@@ -8,6 +9,7 @@ function App():JSX.Element {
     <div className="App">
       <InputField />
       <BasicDetails />
+      <WeatherIndicator />
     </div>
   )
 }

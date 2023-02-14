@@ -1,0 +1,13 @@
+.icon-container {
+    position: absolute;
+    transform: translateX(-50%);
+    transition: left 0.3s ease-in;
+
+    &.sun {
+        top: -2.7rem;
+    }
+
+    &.moon {
+        bottom: -3rem;
+    }
+}

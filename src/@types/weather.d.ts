@@ -3,6 +3,12 @@ export interface Ifetch {
     options: string,
 };
 
+export interface IWeatherReducerInitialState {
+    locData: IlocData | undefined,
+    currentData: IcurrentData | undefined,
+    
+}
+
 export interface IContextProps {
     children: React.ReactNode
 };

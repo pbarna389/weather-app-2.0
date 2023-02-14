@@ -1,0 +1,11 @@
+.weather-indicator {
+  width: 95vw;
+  height: 3px;
+  background: rgb(110, 27, 222);
+  background: linear-gradient(90deg, rgb(110, 27, 222) 10%, rgb(240, 208, 36) 30%, rgb(249, 138, 6) 50%, rgb(240, 208, 36) 70%, rgb(110, 27, 222) 90%);
+  margin: 0 auto;
+  border-radius: 10px;
+  margin-top: 3rem;
+  transition: all 0.3s ease-in;
+  position: relative;
+}/*# sourceMappingURL=WeatherIndicator.css.map */

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { IWeatherContext, IlocData, IcurrentData } from "../@types/weather"
+import { IWeatherContext } from "../@types/weather"
 import { weatherContext } from "../context/weatherContext";
 
 import CurrentWeather from "../components/CurrentWeather";
@@ -13,6 +13,7 @@ const BasicDetails = ():JSX.Element => {
     const {
         data
     } = useContext(weatherContext) as IWeatherContext;
+    
     return (
         <>
             {
