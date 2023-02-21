@@ -6,6 +6,7 @@ export const initialState = {
     autoComplete: undefined,
     picture: undefined,
     forecast: undefined,
+    location: undefined,
 }
 
 const fetchReducer = (state:any, action: ActionType) => {
@@ -15,7 +16,9 @@ const fetchReducer = (state:any, action: ActionType) => {
         case 'fetchedAuto':
             return { ...state, autoComplete: action.payload};
         case 'fetchedData': 
-            return {...state, data: action.payload}
+            return {...state, data: action.payload};
+        case 'fetchedLocation': 
+            return {...state, location: action.payload}
         case 'fetchedPicture':
             return {...state, picture: action.payload};
         case 'fetchedForecast': 

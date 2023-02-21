@@ -3,7 +3,7 @@ import { useEffect, useReducer } from "react";
 import { initialState } from "../reducers/fetchReducer";
 import fetchReducer from "../reducers/fetchReducer";
 
-function useFetch (type: "data" | "picture" | "autocomplete" | "forecast", location: string | undefined, url?: string, options?: RequestInit, length?: number) {  
+function useFetch (type: "data" | "picture" | "autocomplete", location: string | undefined, url?: string, options?: RequestInit, length?: number) {  
     const [state, dispatch] = useReducer(fetchReducer, initialState);
     const controller = new AbortController();
 
@@ -20,6 +20,7 @@ function useFetch (type: "data" | "picture" | "autocomplete" | "forecast", locat
                     }
     
                     const data = await response.json();
+                    console.log(data);
     
                     dispatch({type: "fetchedAuto", payload: data})
     
@@ -86,38 +87,12 @@ function useFetch (type: "data" | "picture" | "autocomplete" | "forecast", locat
                             dispatch({type: "fetchedData", payload: null})
                         }
 
-                        dispatch({type: "fetchedData", payload: data})
+                        dispatch({type: "fetchedData", payload: data?.current})
+                        dispatch({type: "fetchedForecast", payload: data?.forecast})
+                        dispatch({type: "fetchedLocation", payload: data.location})
 
                     } catch(error) {
                         dispatch({type: "fetchedData", payload: null})
-                        console.log(error);
-                        controller.abort('cancel')
-                    }
-                };
-                fetchData();
-            }
-        }
-
-        if (type === "forecast") {
-            if (location) {
-                const fetchData = async() => {
-                    try {
-                        const response = await fetch(url, options)
-                        
-                        if(!response.ok) {
-                            throw new Error(response.statusText)
-                        }
-            
-                        const data = await response.json();
-                        console.log(data);
-                        if (!data) {
-                            dispatch({type: "fetchedForecast", payload: null})
-                        }
-
-                        dispatch({type: "fetchedForecast", payload: data})
-
-                    } catch(error) {
-                        dispatch({type: "fetchedForecast", payload: null})
                         console.log(error);
                         controller.abort('cancel')
                     }
@@ -132,6 +107,7 @@ function useFetch (type: "data" | "picture" | "autocomplete" | "forecast", locat
     return {
         "autoComplete": state.autoComplete,
         "data": state.data,
+        "loc": state.location,
         "picture": state.picture,
         "error": state.error,
         "forecast": state.forecast

@@ -1,4 +1,4 @@
-import InputField from "./components/InputField";
+import Header from "./layout/Header";
 import BasicDetails from "./layout/BasicDetails";
 import SunMoonMeter from "./layout/SunMoonMeter";
 import Forecast from "./layout/Forecast";
@@ -8,10 +8,12 @@ function App():JSX.Element {
 
   return (
     <div className="App">
-      <InputField />
-      <BasicDetails />
-      <SunMoonMeter />
-      <Forecast />
+      <Header />
+      <main>
+        <BasicDetails />
+        <SunMoonMeter />
+        <Forecast />
+      </main>
     </div>
   )
 }

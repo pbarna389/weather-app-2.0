@@ -1,5 +1,5 @@
 .currentWeather-wrapper {
-  width: 100vw;
+  max-width: 100vw;
   display: flex;
   overflow: hidden;
 }

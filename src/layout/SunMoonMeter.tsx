@@ -5,11 +5,11 @@ import WeatherIndicator from "../components/WeatherIndicator"
 
 const SunMoonMeter = () => {
     const [forecastData, setForecastData] = useState<Iastro>();
-    const { data } = useContext(weatherContext) as IWeatherContext;
+    const { data, forecast } = useContext(weatherContext) as IWeatherContext;
 
     useEffect(() => {
         if (data)
-        setForecastData(data.forecast.forecastday[0].astro);
+        setForecastData(forecast.forecastday[0].astro);
     }, [data])
 
     return (

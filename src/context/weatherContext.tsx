@@ -16,15 +16,19 @@ const WeatherContextProvider:React.FC<IContextProps> = ({ children }) => {
     const debounceQuery = useDebounceValue(query, 250);
 
     const { autoComplete } = useFetch("autocomplete", location,`${WEATHER_URL}search.json?key=${WEATHER_KEY}&q=${debounceQuery}`, { method: 'GET'}, debounceQuery.length);
-    const { data } = useFetch('data', location, `${WEATHER_URL}forecast.json?key=${WEATHER_KEY}&q=${location.toLowerCase()}&days=1&aqi=no&alerts=no`);
-    const { forecast } = useFetch('forecast', location, `${WEATHER_URL}forecast.json?key=${WEATHER_KEY}&q=${location.toLowerCase()}&days=6&aqi=no&alerts=no`)
+    const { data, forecast, loc } = useFetch('data', location, `${WEATHER_URL}forecast.json?key=${WEATHER_KEY}&q=${location.toLowerCase()}&days=14&aqi=no&alerts=no`);
 
     useEffect(() => {
         setSuggestions([]);
 
         if (debounceQuery.length > 3) {
             console.log(debounceQuery);
-            setSuggestions(autoComplete);
+            const filteredAutoComplete:any[] = [];
+            autoComplete.forEach((el:any, idx: number) => {
+                !filteredAutoComplete.some((element:any) => el.id === element.id) ? filteredAutoComplete.push(el) : el = el;    
+            })
+            console.log(filteredAutoComplete)
+            setSuggestions(filteredAutoComplete);
         } else {
             setSuggestions([]);
         }
@@ -32,6 +36,10 @@ const WeatherContextProvider:React.FC<IContextProps> = ({ children }) => {
             console.log(location)
         }
     }, [autoComplete]);
+
+    useEffect(() => {
+        console.log(data, forecast, loc)
+    }, [data, forecast])
 
     return (
         <weatherContext.Provider value={{ 
@@ -42,7 +50,8 @@ const WeatherContextProvider:React.FC<IContextProps> = ({ children }) => {
             setLocation,
             location,
             data,
-            forecast
+            forecast,
+            loc
         }}>
             {children}
         </weatherContext.Provider>

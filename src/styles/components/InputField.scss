@@ -1,31 +1,80 @@
+header {
+    margin-top: 1rem;
+    padding-left: 2rem;
+}
+
 .input-wrapper {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    max-width: 15rem;
     z-index: 0;
-}
-
-input {
     position: relative;
-    width: 10rem;
-    color: black;
-}
 
-.autocomplete {
-    position: absolute;
-    background-color: white;
-    width: 10rem;
-    top: 1rem;
-    p {
-        z-index: 1;
-        transition: all 0.5s ease-in;
-        text-align: center;
+    button {
         color: black;
-        cursor: pointer;
+        background: rgb(110, 110, 110);
+        border: none;
+        border-radius: 5px;
+        width:1.5rem;
+        height: 1.5rem;
+        opacity: 0.5;
+        transition: opacity 0.1s ease-in;
+        padding: 0.62rem 1rem;
+
         &:hover {
-            background-color: rgba(85, 85, 245, 0.401)
+            opacity: 0.7;
+        }
+
+        &:active {
+            opacity: 1.1;
+        }
+    }
+
+    input {
+        width: 10rem;
+        color: white;
+    
+        height: 1.5rem;
+        border-radius: 5px;
+        border: 1px solid white;
+        background-color: transparent;
+        padding: 0.5rem 1rem;
+        padding-right: 1.5rem;
+        opacity: 0.5;
+        transition: opacity 0.1s ease-in;
+
+        font-size:1rem;
+
+        &:focus {
+            outline: none;
+            opacity: 1;
+        }
+    }
+    
+    .autocomplete {
+        position: absolute;
+        background-color: white;
+        width: 12.7rem;
+        top: 2.7rem;
+        border-radius: 5px;
+        
+        p {
+            transition: all 0.5s ease-in;
+            text-align: center;
+            color: black;
+            cursor: pointer;
+            z-index: 12;
+            font-size: 1rem;
+
+            &:first-child {
+                &:hover {
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                }
+            }
+
+            &:hover {
+                background-color: rgba(85, 85, 245, 0.401);
+            }
         }
     }
 }

@@ -12,8 +12,8 @@ const Forecast = () => {
     useEffect(() => {
         if (forecast) {
             const newArr:any[] = [];
-            forecast.forecast.forecastday.forEach((el:any) => newArr.push(el));
-            setForecastDays(newArr)
+            forecast.forecastday.forEach((el:any) => newArr.push(el));
+            setForecastDays(newArr.slice(1))
         }
     }, [forecast])
 

@@ -1,6 +1,7 @@
-import { ChangeEvent, useContext, useEffect } from 'react'
+import { ChangeEvent, useContext } from 'react'
 import { IWeatherContext } from '../@types/weather';
 import { weatherContext } from '../context/weatherContext';
+import { SearchIcon } from '../assets/React-Icons-modified/SVGs';
 
 import "../styles/components/InputField.css"
 
@@ -16,15 +17,27 @@ const InputField:React.FC = ():JSX.Element => {
         const target = e.target as unknown as HTMLParagraphElement;
         if (target.textContent) setLocation(target.textContent);
         setQuery("")
+    };
+
+    const handleButtonClick = (e:any) => {
+        const target = e.target as unknown as HTMLElement;
+        const dataType = target.getAttribute(`data-svg`);
+        const inputTarget = document.querySelector(`[data-input="${dataType}"]`) as HTMLInputElement;
+        if (inputTarget && inputTarget.value.length > 0) {
+            console.log(inputTarget.value);
+            setLocation(inputTarget.value);
+            setQuery("");
+        } 
     }
     
     return (
         <div className="input-wrapper">
-            <input type="text" name="" id="" value={query} onChange={e => handleChange(e)} />
+            <input type="text" name="" id="" value={query} placeholder="search" onChange={e => handleChange(e)} data-input="search" />
+            <button onClick={e => handleButtonClick(e)} data-svg="search"><SearchIcon width={25} /></button>
             <div className="autocomplete">
                 {
                 suggestions ?
-                suggestions.map((loc:any) => <p key={loc.id} onClick={e => handleClick(e)}>{loc.name}</p>)
+                suggestions.map((loc:any) => <p key={loc.id} onClick={e => handleClick(e)}>{loc.name} - {loc.region}</p>)
                 : null
                 }
             </div>

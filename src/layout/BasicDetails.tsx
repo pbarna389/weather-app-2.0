@@ -11,7 +11,7 @@ import "../styles/layout/BasicDetails.css"
 
 const BasicDetails = ():JSX.Element => {
     const {
-        data
+        data, forecast, loc
     } = useContext(weatherContext) as IWeatherContext;
     
     return (
@@ -19,9 +19,9 @@ const BasicDetails = ():JSX.Element => {
             {
                 data ? 
                     <div className="currentWeather-wrapper">
-                        <CurrentWeather locData={data.location} currentData={data.current} />
-                        <CurrentStatus isDay={data.current.is_day} code={data.current.condition.code} />
-                        <Gallery forecastHours={data.forecast.forecastday[0].hour} />
+                        <CurrentWeather locData={loc} currentData={data} />
+                        <CurrentStatus isDay={data.is_day} code={data.condition.code} />
+                        <Gallery forecastHours={forecast.forecastday[0].hour} />
                     </div>
                 : null
             }
