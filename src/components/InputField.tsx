@@ -15,7 +15,15 @@ const InputField:React.FC = ():JSX.Element => {
 
     const handleClick = (e:React.MouseEvent<HTMLParagraphElement>) => {
         const target = e.target as unknown as HTMLParagraphElement;
-        if (target.textContent) setLocation(target.textContent);
+        if (target.textContent) {
+            const targetValue = target.textContent.split(":");
+            console.log(targetValue[0],targetValue[1]);
+            if (targetValue[0] === "Pest") {
+                setLocation(targetValue[1])
+            } else {
+                setLocation(`${targetValue[1]} ${targetValue[0]}`)
+            }
+        }
         setQuery("")
     };
 
@@ -32,12 +40,12 @@ const InputField:React.FC = ():JSX.Element => {
     
     return (
         <div className="input-wrapper">
-            <input type="text" name="" id="" value={query} placeholder="search" onChange={e => handleChange(e)} data-input="search" />
+            <input type="text" name="" id="" value={query} placeholder="Search..." onChange={e => handleChange(e)} data-input="search" />
             <button onClick={e => handleButtonClick(e)} data-svg="search"><SearchIcon width={25} /></button>
             <div className="autocomplete">
                 {
                 suggestions ?
-                suggestions.map((loc:any) => <p key={loc.id} onClick={e => handleClick(e)}>{loc.name} - {loc.region}</p>)
+                suggestions.map((loc:any) => <p key={loc.id} onClick={e => handleClick(e)}>{loc.region}: {loc.name}</p>)
                 : null
                 }
             </div>

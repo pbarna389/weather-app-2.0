@@ -37,10 +37,6 @@ const WeatherContextProvider:React.FC<IContextProps> = ({ children }) => {
         }
     }, [autoComplete]);
 
-    useEffect(() => {
-        console.log(data, forecast, loc)
-    }, [data, forecast])
-
     return (
         <weatherContext.Provider value={{ 
             message: "ALIVE",

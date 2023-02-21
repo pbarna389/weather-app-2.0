@@ -5,14 +5,20 @@
     flex-direction: column;
     height: 22rem;
 
+    p {
+        font-size: 0.6rem;
+        margin-bottom: 0.2rem;
+        letter-spacing: 0.2rem;
+    }
+
     &:hover {
-        .status-wrapper, p {
+        .status-wrapper {
             opacity: 1;
             height: 3rem;
         }
     }
 
-    .status-wrapper, p {
+    .status-wrapper {
         opacity: 0;
         height: 0;
         transition: all 0.2s ease-in;

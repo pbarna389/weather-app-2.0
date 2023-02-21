@@ -5,11 +5,16 @@
   flex-direction: column;
   height: 22rem;
 }
-.column-wrapper:hover .status-wrapper, .column-wrapper:hover p {
+.column-wrapper p {
+  font-size: 0.6rem;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.2rem;
+}
+.column-wrapper:hover .status-wrapper {
   opacity: 1;
   height: 3rem;
 }
-.column-wrapper .status-wrapper, .column-wrapper p {
+.column-wrapper .status-wrapper {
   opacity: 0;
   height: 0;
   transition: all 0.2s ease-in;

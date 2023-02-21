@@ -8,8 +8,8 @@ const WeatherColumn:React.FC<IWeatherColumnProps> = ({ minTemp, maxTemp, current
     return (
         <div className="column-wrapper">
             <CurrentStatus code={code} isDay={isDay} type="forecast"/>
-            <p>{time.split(" ").pop()}</p>   
-            <div className="column" style={{ height: `${(((currentTemp - minTemp) / (maxTemp - minTemp) * 100)).toFixed(2)}%`, minHeight: "2rem"}}>
+            <p>{time.split(" ").pop()}</p>
+            <div className="column" style={{ height: `${(((currentTemp - minTemp) / (maxTemp - minTemp) * 100) * 0.97).toFixed(2)}%`, minHeight: "1.3rem"}}>
                 <div>{currentTemp}</div>
             </div>
         </div>

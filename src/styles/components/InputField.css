@@ -1,12 +1,7 @@
-header {
-  margin-top: 1rem;
-  padding-left: 2rem;
-}
-
 .input-wrapper {
   display: flex;
   align-items: center;
-  z-index: 0;
+  z-index: 3;
   position: relative;
 }
 .input-wrapper button {
@@ -49,6 +44,7 @@ header {
   width: 12.7rem;
   top: 2.7rem;
   border-radius: 5px;
+  z-index: 1000000;
 }
 .input-wrapper .autocomplete p {
   transition: all 0.5s ease-in;
@@ -57,6 +53,7 @@ header {
   cursor: pointer;
   z-index: 12;
   font-size: 1rem;
+  z-index: 100000;
 }
 .input-wrapper .autocomplete p:first-child:hover {
   border-top-left-radius: 5px;
