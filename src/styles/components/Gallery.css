@@ -20,7 +20,7 @@
 .forecast-wrapper .columns.comesFromLeft {
   position: relative;
   left: -250%;
-  transform: translateX(313.2%);
+  transform: translateX(300%);
   transition: transform 0.2s ease-in-out;
 }
 .forecast-wrapper .columns.goesToLeft {
@@ -31,7 +31,7 @@
 .forecast-wrapper .columns.comesFromRight {
   position: relative;
   left: 250%;
-  transform: translateX(-313%);
+  transform: translateX(-300%);
   transition: transform 0.2s ease-in-out;
 }
 .forecast-wrapper .status-wrapper {
@@ -41,12 +41,20 @@
   position: absolute;
   z-index: 3;
   transform: translateY(-50%);
+  opacity: 0.5;
+  transition: opacity 0.15s linear;
 }
 .forecast-wrapper .arrow-left svg, .forecast-wrapper .arrow-right svg {
   z-index: -1;
 }
 .forecast-wrapper .arrow-left svg path, .forecast-wrapper .arrow-right svg path {
   z-index: -1;
+}
+.forecast-wrapper .arrow-left:hover, .forecast-wrapper .arrow-right:hover {
+  opacity: 0.75;
+}
+.forecast-wrapper .arrow-left:active, .forecast-wrapper .arrow-right:active {
+  opacity: 1;
 }
 .forecast-wrapper .arrow-left {
   top: 50%;

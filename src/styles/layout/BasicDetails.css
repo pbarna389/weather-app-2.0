@@ -2,6 +2,7 @@
   max-width: 100vw;
   display: flex;
   overflow: hidden;
+  padding: 0 2.5rem;
 }
 .currentWeather-wrapper .forecast-wrapper {
   height: inherit;

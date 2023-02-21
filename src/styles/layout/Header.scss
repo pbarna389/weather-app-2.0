@@ -1,7 +1,9 @@
+@use "../shared/shared";
+
 header {
     margin-top: 1rem;
-    padding: 0 2rem;
+    padding: shared.$padding;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+};
