@@ -10,7 +10,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                     // !isDay ?
                     code === 1000 ?
                     <> 
-                        <div className="icon-1" style={{top: "50%"}}>
+                        <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                             {
                                 !isDay ?
                                     <Moon width={type === "forecast" ? 50 : 150} />
@@ -21,7 +21,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                     </>
                     : code === 1003 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -29,13 +29,13 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                                     <Sun width={type === "forecast" ? 40 : 100} />
                                 }
                             </div>
-                            <div className="icon-2">
+                            <div className="icon-2" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 <Cloud width={type === "forecast" ? 40 : 100} />
                             </div>
                         </>
                     : code === 1006 ?
                         <>
-                            <div className="icon-1" style={{top: type === "forecast" ? "35%" : "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -43,13 +43,13 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                                     <Sun width={type === "forecast" ? 40 : 100} />
                                 }
                             </div>
-                            <div className="icon-2">
+                            <div className="icon-2" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 <Cloud width={type === "forecast" ? 45 : 150} />
                             </div>
                         </>
                     : code === 1009 ?
                         <>
-                            <div className="icon-1" style={{top: type === "forecast" ? "35%" : "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "20%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -57,7 +57,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                                     <Sun width={type === "forecast" ? 40 : 100} />
                                 }
                             </div>
-                            <div className="icon-2">
+                            <div className="icon-2" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 <Cloud width={type === "forecast" ? 50 : 150} />
                             </div>
                             <div className="icon-3">
@@ -66,7 +66,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1030 ?
                         <>
-                            <div className="icon-1" style={{top: "45%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -74,13 +74,13 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                                     <Sun width={type === "forecast" ? 40 : 100} />
                                 }
                             </div>
-                            <div className="icon-2" style={{top: "16%", left: "50%", opacity: "0.5", rotate: "270deg"}}>
+                            <div className="icon-2" style={{top: type === "forecast" ? "50" : "16%", left: "50%", opacity: "0.5", rotate: "270deg"}}>
                                 <Fog width={type === "forecast" ? 46 : 140} />
                             </div>                        
                         </>
                     : code === 1063 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -88,7 +88,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                                     <Sun width={type === "forecast" ? 40 : 100} />
                                 }
                             </div>
-                            <div className="icon-2" style={{opacity: "0.5"}} >
+                            <div className="icon-2" style={{top: type === "forecast" ? "50%" : "20%", opacity: "0.5"}} >
                                 <RainyCloud width={type === "forecast" ? 35 : 90} />
                             </div>
                             <div className="icon-3" style={{opacity: "0.5", top: "52%", left: "55%"}} >
@@ -97,7 +97,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1066 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -105,7 +105,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                                     <Sun width={type === "forecast" ? 40 : 100} />
                                 }
                             </div>
-                            <div className="icon-2" style={{opacity: "0.5"}} >
+                            <div className="icon-2" style={{top: type === "forecast" ? "50%" : "25%", opacity: "0.5"}} >
                                 <SnowyCloud width={type === "forecast" ? 35 : 90} />
                             </div>
                             <div className="icon-3" style={{opacity: "0.5", top: "52%", left: "55%"}} >
@@ -114,7 +114,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1069 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -122,7 +122,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                                     <Sun width={type === "forecast" ? 40 : 100} />
                                 }
                             </div>
-                            <div className="icon-2" style={{opacity: "0.5"}} >
+                            <div className="icon-2" style={{top: type === "forecast" ? "50%" : "25%", opacity: "0.5"}} >
                                 <RainyCloud width={type === "forecast" ? 35 : 90} />
                             </div>
                             <div className="icon-3" style={{opacity: "0.5", top: "52%", left: "55%"}} >
@@ -131,7 +131,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1072 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -151,7 +151,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1087 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                         <Moon width={type === "forecast" ? 40 : 100} />                           
@@ -176,7 +176,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1114 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -196,7 +196,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1117 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -216,7 +216,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1135 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -233,7 +233,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1147 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -253,7 +253,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1150 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -270,7 +270,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1153 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -287,7 +287,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1168 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -304,7 +304,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1171 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -324,7 +324,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1180 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -338,7 +338,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1183 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -352,7 +352,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1186 || code === 1189 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -369,7 +369,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1192 || code === 1195 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -389,7 +389,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1198 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -406,7 +406,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1201 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -426,7 +426,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1204 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -443,7 +443,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1207 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -460,7 +460,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1210 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -474,7 +474,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1213 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -488,7 +488,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1216 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -505,7 +505,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1219 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -522,7 +522,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1222 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -542,7 +542,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1225 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -562,7 +562,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1237 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -582,7 +582,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1240 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -602,7 +602,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1243 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -622,7 +622,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1246 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -642,7 +642,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1249 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -662,7 +662,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1252 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -682,7 +682,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1255 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -702,7 +702,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1258 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -722,7 +722,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1261 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -742,7 +742,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1264 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -762,7 +762,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1273 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -784,7 +784,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1276 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -809,7 +809,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1279 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />
@@ -831,7 +831,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                         </>
                     : code === 1282 ?
                         <>
-                            <div className="icon-1" style={{top: "42%"}}>
+                            <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%"}}>
                                 {
                                     !isDay ?
                                     <Moon width={type === "forecast" ? 40 : 100} />

@@ -6,6 +6,10 @@
     overflow: hidden;
     padding: 0 shared.$padding;
 
+    @include shared.phones {
+        flex-direction: column;
+    }
+
     .forecast-wrapper {
         height: inherit;
     }

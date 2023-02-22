@@ -2,6 +2,20 @@
 .status-wrapper {
     position: relative;
     width: 25vw;
+
+    &:hover {
+        .icon-1 {
+            animation: animation1-a 2s linear;
+        }
+
+        .icon-2 {
+            animation: animation2 2s linear;
+        }
+
+        .icon-3 {
+            animation: animation3 2s linear;
+        }
+    }
     // border: 1px solid white;
 
     .icon-1, .icon-2, .icon-3, .icon-4 {
@@ -15,17 +29,105 @@
     };
 
     .icon-2 {
-        top: 54%;
+        top: 30%;
         left: 42%;
         z-index: 1;
     }
 
     .icon-3 {
         position: absolute;
-        top: 55%;
+        top: 30%;
         left: 55%;
         z-index: 1;
     }
 
 
+};
+
+@keyframes animation1-a {
+    0% {
+        top: 20%;
+    }
+
+    25% {
+        top: 15%;
+    }
+
+    50% {
+        top: 20%;
+    }
+
+    75% {
+        top: 25%;
+    }
+
+    100% {
+        top: 20%;
+    }
+}
+
+@keyframes animation1-b {
+    0% {
+        top: 50%;
+    }
+
+    25% {
+        top: 55%;
+    }
+
+    50% {
+        top: 50%;
+    }
+
+    75% {
+        top: 45%;
+    }
+
+    100% {
+        top: 50%;
+    }
+}
+
+@keyframes animation2 {
+    0% {
+        left: 45%
+    }
+
+    25% {
+        left: 40%;
+    }
+
+    50% {
+        left: 45%;
+    }
+
+    75% {
+        left: 50%;
+    }
+
+    100% {
+        left: 45%;
+    }
+}
+
+@keyframes animation3 {
+    0% {
+        left: 55%
+    }
+
+    25% {
+        left: 60%;
+    }
+
+    50% {
+        left: 55%;
+    }
+
+    75% {
+        left: 50%;
+    }
+
+    100% {
+        left: 55%;
+    }
 }

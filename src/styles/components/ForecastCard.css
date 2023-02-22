@@ -11,4 +11,7 @@
 }
 .forecast-card .status-wrapper {
   border: none;
+}
+.forecast-card .weather-indicator {
+  margin: 3rem;
 }/*# sourceMappingURL=ForecastCard.css.map */

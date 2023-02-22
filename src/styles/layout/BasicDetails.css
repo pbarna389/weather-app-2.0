@@ -4,6 +4,11 @@
   overflow: hidden;
   padding: 0 2.5rem;
 }
+@media (min-width: 320px) and (max-width: 640px) {
+  .currentWeather-wrapper {
+    flex-direction: column;
+  }
+}
 .currentWeather-wrapper .forecast-wrapper {
   height: inherit;
 }/*# sourceMappingURL=BasicDetails.css.map */

@@ -28,8 +28,8 @@ const WeatherIndicator:React.FC<IWeatherIndicatorProps> = ({ astro }) => {
     }, [astroData])
     
     const setSunTimes = () => {
-            const sunrise = astroData?.sunrise;
-            const sunriseTime = sunrise?.split(" ").shift()?.split(":").map(Number); 
+            const sunriseLoc = astroData?.sunrise;
+            const sunriseTime = sunriseLoc?.split(" ").shift()?.split(":").map(Number); 
 
             setSunrise(sunriseTime);
     
@@ -80,16 +80,20 @@ const WeatherIndicator:React.FC<IWeatherIndicatorProps> = ({ astro }) => {
             astroData ?
                 <div className="weather-indicator">
                     <IconContainer type="sun" sunrise={sunrise} sunset={sunset} rise={true}>
+                        <p>{sunrise?.join(":")}</p>
                         <SunRise width={50} />
                     </IconContainer>
                     <IconContainer type="sun" sunrise={sunrise} sunset={sunset} rise={false}>
+                        <p>{sunset?.join(":")}</p>
                         <SunSet width={50} />
                     </IconContainer>
                     <IconContainer type="moon" moonrise={moonrise} moonset={moonset} rise={true}>
                         <MoonRise width={50} />
+                        <p>{moonrise?.join(":")}</p>
                     </IconContainer>
                     <IconContainer type="moon" moonrise={moonrise} moonset={moonset} rise={false}>
                         <MoonSet width={50} />
+                        <p>{moonset?.join(":")}</p>
                     </IconContainer>
                 </div>
             : null

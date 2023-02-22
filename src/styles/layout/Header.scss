@@ -6,4 +6,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include shared.phones {
+        padding: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center
+    }
 };

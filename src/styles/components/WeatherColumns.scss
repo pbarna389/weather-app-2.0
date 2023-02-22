@@ -14,7 +14,11 @@
     &:hover {
         .status-wrapper {
             opacity: 1;
-            height: 6rem;
+            height: 5rem;
+
+            .icon-1 {
+                top: 75%
+            }
         }
     }
 

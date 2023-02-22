@@ -1,7 +1,18 @@
 .loc-wrapper {
   width: 25vw;
 }
+@media (min-width: 320px) and (max-width: 640px) {
+  .loc-wrapper {
+    width: 100vw;
+  }
+}
 .loc-wrapper .loc-basic {
   display: flex;
   gap: 1rem;
+}
+.loc-wrapper .loc-basic .loc-data {
+  width: 25%;
+}
+.loc-wrapper .loc-basic .portrait {
+  width: 40%;
 }/*# sourceMappingURL=CurrentWeather.css.map */
