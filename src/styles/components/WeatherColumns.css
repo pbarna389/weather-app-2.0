@@ -10,14 +10,14 @@
   margin-bottom: 0.2rem;
   letter-spacing: 0.2rem;
 }
+@media (min-width: 320px) and (max-width: 640px) {
+  .column-wrapper p {
+    font-size: 0.3rem;
+  }
+}
 .column-wrapper:hover .status-wrapper {
   opacity: 1;
   height: 5rem;
-}
-@media (min-width: 320px) and (max-width: 640px) {
-  .column-wrapper:hover .status-wrapper {
-    height: 3rem;
-  }
 }
 .column-wrapper:hover .status-wrapper .icon-1 {
   top: 75%;
@@ -36,6 +36,20 @@
   border-radius: 5px;
   text-align: center;
   transition: all 0.2s ease-in;
+}
+.column p {
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+@media (min-width: 320px) and (max-width: 640px) {
+  .column p {
+    font-size: 0.5rem;
+  }
+}
+@media (min-width: 640px) and (max-width: 1280px) {
+  .column p {
+    font-size: 0.54rem;
+  }
 }
 @media (min-width: 320px) and (max-width: 640px) {
   .column {

@@ -29,8 +29,8 @@
 }
 .forecast-wrapper .columns.comesFromLeft {
   position: relative;
-  left: -250%;
-  transform: translateX(290%);
+  left: -100rem;
+  transform: translateX(100rem);
   transition: transform 0.2s ease-in-out;
 }
 .forecast-wrapper .columns.goesToLeft {
@@ -40,8 +40,8 @@
 }
 .forecast-wrapper .columns.comesFromRight {
   position: relative;
-  left: 250%;
-  transform: translateX(-290%);
+  left: 100rem;
+  transform: translateX(-100rem);
   transition: transform 0.2s ease-in-out;
 }
 .forecast-wrapper .status-wrapper {

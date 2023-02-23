@@ -19,7 +19,7 @@ const WeatherColumn:React.FC<IWeatherColumnProps> = ({ minTemp, maxTemp, current
                 : currentTemp < 0 && currentTemp >= -10 ? "linear-gradient(210deg, #6e1bde 50%, #004af9 100%)" 
                 : currentTemp < -10 && currentTemp >= -20 ? "linear-gradient(210deg, #6e1bde 50%, #02248f 100%)" 
                 : "linear-gradient(210deg, #6e1bde 50%, #01103e 100%)"}`}}>
-                <div>{currentTemp} °C</div>
+                <p>{currentTemp} °C</p>
             </div>
         </div>
     )
