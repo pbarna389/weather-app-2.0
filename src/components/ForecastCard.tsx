@@ -15,8 +15,8 @@ const ForecastCard:React.FC<IForecastCardProps> = ({ code, isDay, astro, date, m
             <CurrentStatus code={code} isDay={isDay} type={"forecast"}  />
             <WeatherIndicator astro={astro} />
             <div className="temp-wrapper">
-                <p>{mintemp} °C</p>
-                <p>{maxtemp} °C</p>
+                <p>Min: {mintemp} °C</p>
+                <p>Max: {maxtemp} °C</p>
             </div>    
         </div>
     )

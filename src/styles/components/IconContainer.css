@@ -3,6 +3,10 @@
   transform: translateX(-50%);
   transition: all 0.3s ease-in;
   text-align: center;
+  opacity: 0.5;
+}
+.icon-container:hover {
+  opacity: 1;
 }
 .icon-container p {
   font-weight: 600;

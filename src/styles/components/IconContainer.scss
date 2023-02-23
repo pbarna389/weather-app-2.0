@@ -4,6 +4,12 @@
     transition: all 0.3s ease-in;
     text-align: center;
 
+    opacity: 0.5;
+
+    &:hover {
+        opacity: 1;
+    }
+
     p {
         font-weight: 600;
     }

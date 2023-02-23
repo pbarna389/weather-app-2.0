@@ -1,3 +1,5 @@
+@use "../shared/shared";
+
 .forecast-card {
     display: flex;
     flex-direction: column;
@@ -12,6 +14,10 @@
     p {
         align-self: flex-start;
         font-weight: 600;
+
+        @include shared.phones {
+            font-size: 0.7rem;
+        }
     }
 
     .status-wrapper {
@@ -30,9 +36,13 @@
         margin-top: 1rem;
 
         p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             opacity: 0.5;
             transition: opacity 0.2s ease-in;
+
+            @include shared.phones {
+                font-size: 0.65rem;
+            }
 
             &:hover {
                 opacity: 1;

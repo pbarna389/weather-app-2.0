@@ -79,7 +79,7 @@ const WeatherIndicator:React.FC<IWeatherIndicatorProps> = ({ astro }) => {
         return array[0] < 10 ? 
                     array[1] < 10 ? ["0" + array[0], "0" + array[1]].join(":") 
                     : ["0" + array[0], array[1]].join(":") 
-                    : array[0] > 10 && array[1] < 10 ? [array[0], "0" + array[1]].join(":") 
+                    : array[0] >= 10 && array[1] < 10 ? [array[0], "0" + array[1]].join(":") 
                     : array.join(":") 
     }
 
