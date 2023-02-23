@@ -129,6 +129,7 @@ export interface ICurrentStatus {
     code: number,
     isDay: boolean,
     type?: "forecast" | "current",
+    status: "string",
 };
 
 export interface IWeatherColumnProps extends ICurrentStatus {

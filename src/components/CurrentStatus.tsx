@@ -3,9 +3,9 @@ import { ICurrentStatus } from "../@types/weather";
 
 import "../styles/components/CurrentStatus.css"
 
-const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Element => {
+const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):JSX.Element => {
     return (
-            <div className="status-wrapper" style={{width: type === "forecast" ? "3rem" : ""}}>
+            <div className="status-wrapper" style={{width: type === "forecast" ? "3rem" : "", flexDirection: type !== "forecast" ? "column" : "row"}}>
                 {
                     // !isDay ?
                     code === 1000 ?
@@ -854,6 +854,11 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type }):JSX.Eleme
                                     }
                             </div>
                         </>
+                    : null
+                }
+                {
+                    type !== "forecast" ?
+                    <p className="forecast-status">{status}</p>
                     : null
                 }
             </div>

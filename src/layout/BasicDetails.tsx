@@ -20,7 +20,7 @@ const BasicDetails = ():JSX.Element => {
                 data ? 
                     <section className="currentWeather-wrapper">
                         <CurrentWeather locData={loc} currentData={data} />
-                        <CurrentStatus isDay={data.is_day} code={data.condition.code} />
+                        <CurrentStatus isDay={data.is_day} code={data.condition.code} status={data.condition.text} />
                         <Gallery forecastHours={forecast.forecastday[0].hour} />
                     </section>
                 : null
