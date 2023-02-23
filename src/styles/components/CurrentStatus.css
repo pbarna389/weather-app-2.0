@@ -1,15 +1,23 @@
 .status-wrapper {
   position: relative;
   width: 25vw;
+  margin: 2rem 0;
+}
+@media (min-width: 640px) and (max-width: 1280px) {
+  .status-wrapper {
+    width: 50%;
+  }
 }
 .status-wrapper:hover .icon-1 {
-  animation: animation1-a 2s linear;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
 }
 .status-wrapper:hover .icon-2 {
-  animation: animation2 2s linear;
+  animation: animation2 1.5s infinite linear;
 }
 .status-wrapper:hover .icon-3 {
-  animation: animation3 2s linear;
+  animation: animation3 1.5s infinite linear;
 }
 .status-wrapper .icon-1, .status-wrapper .icon-2, .status-wrapper .icon-3, .status-wrapper .icon-4 {
   position: absolute;
@@ -25,7 +33,6 @@
   z-index: 1;
 }
 .status-wrapper .icon-3 {
-  position: absolute;
   top: 30%;
   left: 55%;
   z-index: 1;

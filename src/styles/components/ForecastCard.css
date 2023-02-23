@@ -6,12 +6,29 @@
   width: 15rem;
   height: 15rem;
   margin: 0 2rem;
-  gap: 2.5rem;
   border-radius: 10px;
+}
+.forecast-card p {
+  align-self: flex-start;
+  font-weight: 600;
 }
 .forecast-card .status-wrapper {
   border: none;
 }
 .forecast-card .weather-indicator {
   margin: 3rem;
+}
+.forecast-card .temp-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1rem;
+}
+.forecast-card .temp-wrapper p {
+  font-size: 1.3rem;
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in;
+}
+.forecast-card .temp-wrapper p:hover {
+  opacity: 1;
 }/*# sourceMappingURL=ForecastCard.css.map */

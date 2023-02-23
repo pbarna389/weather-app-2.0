@@ -1,5 +1,8 @@
+@use "../shared/shared";
+
 .fullForecast-wrapper {
     display: flex;
     justify-content: space-between;
     overflow: hidden;
+    margin: 2rem 0;
 }

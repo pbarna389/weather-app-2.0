@@ -8,6 +8,12 @@
 
     @include shared.phones {
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @include shared.tablets {
+        flex-wrap: wrap;
     }
 
     .forecast-wrapper {

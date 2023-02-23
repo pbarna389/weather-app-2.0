@@ -2,23 +2,63 @@
 
 .loc-wrapper {
     width: 25vw;
+    margin: 2rem 0;
 
     @include shared.phones {
         width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    @include shared.tablets {
+        width: 50%;
     }
 
     .loc-basic {
         display: flex;
         gap: 1rem;
+        width: 100%;
+
+        @include shared.phones {
+            justify-content: center;
+            align-items: center;
+            width: 75%;
+        }
+
+        @include shared.tablets {
+            width: 100%;
+        }
         
         .loc-data {
-            width: 25%;
+            width: 50%;
+
+            @include shared.phones {
+                width: 50%;
+            }
+
+            @include shared.tablets {
+                width: 50%;
+            }
             
         }
 
         .portrait {
-            width: 40%;
+            width: 10rem;
+
+            @include shared.phones {
+                width: 10rem;
+            }
+
+            @include shared.tablets {
+                width: 10rem;
+            }
         };
         // border: 1px solid white;
+    }
+
+    .loc-details {
+        margin: 2rem 0;
     }
 }

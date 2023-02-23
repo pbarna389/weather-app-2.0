@@ -30,7 +30,6 @@ export interface ICurrentWeather {
     currentData: IcurrentData,
 }
 
-
 export interface IlocData {
     name: string,
     region: string,
@@ -152,7 +151,10 @@ export interface Iastro {
 }
 
 export interface IForecastCardProps extends ICurrentStatus {
-    astro: Iastro
+    astro: Iastro,
+    date: string;
+    mintemp: number,
+    maxtemp: number
 }
 //REDUCER
 

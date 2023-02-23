@@ -1,19 +1,31 @@
+@use "../shared/shared";
 
 .status-wrapper {
     position: relative;
     width: 25vw;
+    margin: 2rem 0;
+
+    @include shared.phones {
+        
+    }
+
+    @include shared.tablets{
+        width: 50%;
+    }
 
     &:hover {
         .icon-1 {
-            animation: animation1-a 2s linear;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in;
         }
 
         .icon-2 {
-            animation: animation2 2s linear;
+            animation: animation2 1.5s infinite linear;
         }
 
         .icon-3 {
-            animation: animation3 2s linear;
+            animation: animation3 1.5s infinite linear;
         }
     }
     // border: 1px solid white;
@@ -35,7 +47,6 @@
     }
 
     .icon-3 {
-        position: absolute;
         top: 30%;
         left: 55%;
         z-index: 1;

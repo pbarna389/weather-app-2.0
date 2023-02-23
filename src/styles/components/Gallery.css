@@ -5,8 +5,18 @@
   overflow: hidden;
   width: 50vw;
   z-index: 2;
-  gap: 2rem;
   position: relative;
+  margin: 2rem 0;
+}
+@media (min-width: 320px) and (max-width: 640px) {
+  .forecast-wrapper {
+    width: 100vw;
+  }
+}
+@media (min-width: 640px) and (max-width: 1280px) {
+  .forecast-wrapper {
+    width: 100vw;
+  }
 }
 .forecast-wrapper .columns {
   display: flex;
@@ -20,7 +30,7 @@
 .forecast-wrapper .columns.comesFromLeft {
   position: relative;
   left: -250%;
-  transform: translateX(300%);
+  transform: translateX(290%);
   transition: transform 0.2s ease-in-out;
 }
 .forecast-wrapper .columns.goesToLeft {
@@ -31,7 +41,7 @@
 .forecast-wrapper .columns.comesFromRight {
   position: relative;
   left: 250%;
-  transform: translateX(-300%);
+  transform: translateX(-290%);
   transition: transform 0.2s ease-in-out;
 }
 .forecast-wrapper .status-wrapper {
@@ -43,6 +53,19 @@
   transform: translateY(-50%);
   opacity: 0.5;
   transition: opacity 0.15s linear;
+  top: 50%;
+}
+@media (min-width: 320px) and (max-width: 640px) {
+  .forecast-wrapper .arrow-left, .forecast-wrapper .arrow-right {
+    transform: none;
+    top: 0;
+  }
+}
+@media (min-width: 640px) and (max-width: 1280px) {
+  .forecast-wrapper .arrow-left, .forecast-wrapper .arrow-right {
+    transform: none;
+    top: 0;
+  }
 }
 .forecast-wrapper .arrow-left svg, .forecast-wrapper .arrow-right svg {
   z-index: -1;
@@ -57,10 +80,8 @@
   opacity: 1;
 }
 .forecast-wrapper .arrow-left {
-  top: 50%;
   left: 0%;
 }
 .forecast-wrapper .arrow-right {
-  top: 50%;
   right: 0;
 }/*# sourceMappingURL=Gallery.css.map */

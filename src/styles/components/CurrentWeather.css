@@ -1,18 +1,64 @@
 .loc-wrapper {
   width: 25vw;
+  margin: 2rem 0;
 }
 @media (min-width: 320px) and (max-width: 640px) {
   .loc-wrapper {
     width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+@media (min-width: 640px) and (max-width: 1280px) {
+  .loc-wrapper {
+    width: 50%;
   }
 }
 .loc-wrapper .loc-basic {
   display: flex;
   gap: 1rem;
+  width: 100%;
+}
+@media (min-width: 320px) and (max-width: 640px) {
+  .loc-wrapper .loc-basic {
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+  }
+}
+@media (min-width: 640px) and (max-width: 1280px) {
+  .loc-wrapper .loc-basic {
+    width: 100%;
+  }
 }
 .loc-wrapper .loc-basic .loc-data {
-  width: 25%;
+  width: 50%;
+}
+@media (min-width: 320px) and (max-width: 640px) {
+  .loc-wrapper .loc-basic .loc-data {
+    width: 50%;
+  }
+}
+@media (min-width: 640px) and (max-width: 1280px) {
+  .loc-wrapper .loc-basic .loc-data {
+    width: 50%;
+  }
 }
 .loc-wrapper .loc-basic .portrait {
-  width: 40%;
+  width: 10rem;
+}
+@media (min-width: 320px) and (max-width: 640px) {
+  .loc-wrapper .loc-basic .portrait {
+    width: 10rem;
+  }
+}
+@media (min-width: 640px) and (max-width: 1280px) {
+  .loc-wrapper .loc-basic .portrait {
+    width: 10rem;
+  }
+}
+.loc-wrapper .loc-details {
+  margin: 2rem 0;
 }/*# sourceMappingURL=CurrentWeather.css.map */

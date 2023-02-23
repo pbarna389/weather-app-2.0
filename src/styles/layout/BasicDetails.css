@@ -7,6 +7,13 @@
 @media (min-width: 320px) and (max-width: 640px) {
   .currentWeather-wrapper {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (min-width: 640px) and (max-width: 1280px) {
+  .currentWeather-wrapper {
+    flex-wrap: wrap;
   }
 }
 .currentWeather-wrapper .forecast-wrapper {

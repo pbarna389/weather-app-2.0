@@ -6,9 +6,13 @@
     width: 15rem;
     height: 15rem;
     margin: 0 2rem;
-    gap: 2.5rem;
 
     border-radius: 10px;
+
+    p {
+        align-self: flex-start;
+        font-weight: 600;
+    }
 
     .status-wrapper {
         border: none;
@@ -17,5 +21,22 @@
 
     .weather-indicator {
         margin: 3rem;
+    }
+
+    .temp-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 1rem;
+
+        p {
+            font-size: 1.3rem;
+            opacity: 0.5;
+            transition: opacity 0.2s ease-in;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
     }
 }

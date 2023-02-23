@@ -80,7 +80,17 @@ const WeatherIndicator:React.FC<IWeatherIndicatorProps> = ({ astro }) => {
             astroData ?
                 <div className="weather-indicator">
                     <IconContainer type="sun" sunrise={sunrise} sunset={sunset} rise={true}>
-                        <p>{sunrise?.join(":")}</p>
+                        <p>
+                            {
+                            sunrise ? 
+                                sunrise[0] < 10 ?
+                                    sunrise[1] < 10 ?
+                                        ["0" + sunrise[0], "0" + sunrise[1]].join(":")
+                                    : ["0" + sunrise[0], sunrise[1]].join(":")
+                                    : sunrise.join(":")
+                                    : null
+                            }
+                        </p>
                         <SunRise width={50} />
                     </IconContainer>
                     <IconContainer type="sun" sunrise={sunrise} sunset={sunset} rise={false}>
@@ -89,11 +99,31 @@ const WeatherIndicator:React.FC<IWeatherIndicatorProps> = ({ astro }) => {
                     </IconContainer>
                     <IconContainer type="moon" moonrise={moonrise} moonset={moonset} rise={true}>
                         <MoonRise width={50} />
-                        <p>{moonrise?.join(":")}</p>
+                        <p>                            
+                            {
+                            moonrise ? 
+                                moonrise[0] < 10 ?
+                                    moonrise[1] < 10 ?
+                                        ["0" + moonrise[0], "0" + moonrise[1]].join(":")
+                                    : ["0" + moonrise[0], moonrise[1]].join(":")
+                                    : moonrise.join(":")
+                                    : null
+                            }
+                        </p>
                     </IconContainer>
                     <IconContainer type="moon" moonrise={moonrise} moonset={moonset} rise={false}>
                         <MoonSet width={50} />
-                        <p>{moonset?.join(":")}</p>
+                        <p>                            
+                            {
+                            moonset ? 
+                                moonset[0] < 10 ?
+                                    moonset[1] < 10 ?
+                                        ["0" + moonset[0], "0" + moonset[1]].join(":")
+                                    : ["0" + moonset[0], moonset[1]].join(":")
+                                    : moonset.join(":")
+                                    : null
+                            }
+                        </p>
                     </IconContainer>
                 </div>
             : null

@@ -1,3 +1,5 @@
+@use "../shared/shared";
+
 .column-wrapper {
     display: flex;
     align-items: center;
@@ -16,6 +18,10 @@
             opacity: 1;
             height: 5rem;
 
+            @include shared.phones {
+                height: 3rem;
+            }
+
             .icon-1 {
                 top: 75%
             }
@@ -25,6 +31,7 @@
     .status-wrapper {
         opacity: 0;
         height: 0;
+        margin: 0;
         transition: all 0.2s ease-in;
     }
 
@@ -33,9 +40,19 @@
 .column {
     background-color: green;
     margin: 0 1rem;
-    min-width: 5rem;
+    width: 5rem;
     border-radius: 5px;
 
     text-align: center;
     transition: all 0.2s ease-in;
+
+    @include shared.phones {
+        max-width: 2rem;
+        margin: 0 0.2rem;
+    }
+
+    @include shared.tablets {
+        width: 3rem;
+        margin: 0 1rem;
+    }
 }

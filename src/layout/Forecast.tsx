@@ -21,7 +21,7 @@ const Forecast = () => {
         <div className="fullForecast-wrapper">
             {
                 forecastDays ?
-                forecastDays.map(el => <ForecastCard key={el.date} astro={el.astro} code={el.day.condition.code} isDay={true} />)
+                forecastDays.map(el => <ForecastCard key={el.date} astro={el.astro} code={el.day.condition.code} isDay={true} date={el.date} mintemp={el.day.mintemp_c} maxtemp={el.day.maxtemp_c} />)
                 :null
             }
         </div>

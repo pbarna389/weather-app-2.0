@@ -1,13 +1,22 @@
-.forecast-wrapper {
+@use "../shared/shared";
 
+.forecast-wrapper {
     display: flex;
     align-items: flex-end;
     justify-content: center;
     overflow: hidden;
     width: 50vw;
     z-index: 2;
-    gap: 2rem;
     position: relative;
+    margin: 2rem 0;
+
+    @include shared.phones {
+        width: 100vw;
+    }
+
+    @include shared.tablets {
+        width: 100vw;
+    }
 
     .columns {
         display: flex;
@@ -22,7 +31,7 @@
         &.comesFromLeft {
             position: relative;
             left: -250%;
-            transform: translateX(300%);
+            transform: translateX(290%);
             transition: transform 0.2s ease-in-out;
         }
 
@@ -35,7 +44,7 @@
         &.comesFromRight {
             position: relative;
             left: 250%;
-            transform: translateX(-300%);
+            transform: translateX(-290%);
             transition: transform 0.2s ease-in-out;
         }
 
@@ -55,6 +64,17 @@
         transform: translateY(-50%);
         opacity: 0.5;
         transition: opacity 0.15s linear;
+        top: 50%;
+
+        @include shared.phones {
+            transform: none;
+            top: 0;
+        }
+
+        @include shared.tablets {
+            transform: none;
+            top: 0;
+        }
 
         svg {
             z-index: -1;
@@ -73,12 +93,10 @@
     };
 
     .arrow-left {
-        top: 50%;
         left: 0%;
     }
 
     .arrow-right {
-        top: 50%;
         right: 0;
     }
 

@@ -4,6 +4,9 @@
   transition: all 0.3s ease-in;
   text-align: center;
 }
+.icon-container p {
+  font-weight: 600;
+}
 .icon-container:hover p {
   opacity: 1;
   font-size: 1.2rem;

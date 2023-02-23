@@ -14,20 +14,38 @@
   opacity: 1;
   height: 5rem;
 }
+@media (min-width: 320px) and (max-width: 640px) {
+  .column-wrapper:hover .status-wrapper {
+    height: 3rem;
+  }
+}
 .column-wrapper:hover .status-wrapper .icon-1 {
   top: 75%;
 }
 .column-wrapper .status-wrapper {
   opacity: 0;
   height: 0;
+  margin: 0;
   transition: all 0.2s ease-in;
 }
 
 .column {
   background-color: green;
   margin: 0 1rem;
-  min-width: 5rem;
+  width: 5rem;
   border-radius: 5px;
   text-align: center;
   transition: all 0.2s ease-in;
+}
+@media (min-width: 320px) and (max-width: 640px) {
+  .column {
+    max-width: 2rem;
+    margin: 0 0.2rem;
+  }
+}
+@media (min-width: 640px) and (max-width: 1280px) {
+  .column {
+    width: 3rem;
+    margin: 0 1rem;
+  }
 }/*# sourceMappingURL=WeatherColumns.css.map */
