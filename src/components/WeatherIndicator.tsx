@@ -72,8 +72,16 @@ const WeatherIndicator:React.FC<IWeatherIndicatorProps> = ({ astro }) => {
         } else {
             setMoonset(moonSetTime)
         }
+        console.log(moonset)
     };
 
+    const setTimeFormat:Function = (array: number[]):string => {
+        return array[0] < 10 ? 
+                    array[1] < 10 ? ["0" + array[0], "0" + array[1]].join(":") 
+                    : ["0" + array[0], array[1]].join(":") 
+                    : array[0] > 10 && array[1] < 10 ? [array[0], "0" + array[1]].join(":") 
+                    : array.join(":") 
+    }
 
     return (
         <>{
@@ -82,32 +90,24 @@ const WeatherIndicator:React.FC<IWeatherIndicatorProps> = ({ astro }) => {
                     <IconContainer type="sun" sunrise={sunrise} sunset={sunset} rise={true}>
                         <p>
                             {
-                            sunrise ? 
-                                sunrise[0] < 10 ?
-                                    sunrise[1] < 10 ?
-                                        ["0" + sunrise[0], "0" + sunrise[1]].join(":")
-                                    : ["0" + sunrise[0], sunrise[1]].join(":")
-                                    : sunrise.join(":")
-                                    : null
+                            sunrise ? setTimeFormat(sunrise) : null
                             }
                         </p>
                         <SunRise width={50} />
                     </IconContainer>
                     <IconContainer type="sun" sunrise={sunrise} sunset={sunset} rise={false}>
-                        <p>{sunset?.join(":")}</p>
+                        <p>
+                            {
+                                sunset ? setTimeFormat(sunset) : null
+                            }
+                        </p>
                         <SunSet width={50} />
                     </IconContainer>
                     <IconContainer type="moon" moonrise={moonrise} moonset={moonset} rise={true}>
                         <MoonRise width={50} />
                         <p>                            
                             {
-                            moonrise ? 
-                                moonrise[0] < 10 ?
-                                    moonrise[1] < 10 ?
-                                        ["0" + moonrise[0], "0" + moonrise[1]].join(":")
-                                    : ["0" + moonrise[0], moonrise[1]].join(":")
-                                    : moonrise.join(":")
-                                    : null
+                            moonrise ? isNaN(moonrise[0]) ? "N.A" : setTimeFormat(moonrise): null
                             }
                         </p>
                     </IconContainer>
@@ -115,13 +115,7 @@ const WeatherIndicator:React.FC<IWeatherIndicatorProps> = ({ astro }) => {
                         <MoonSet width={50} />
                         <p>                            
                             {
-                            moonset ? 
-                                moonset[0] < 10 ?
-                                    moonset[1] < 10 ?
-                                        ["0" + moonset[0], "0" + moonset[1]].join(":")
-                                    : ["0" + moonset[0], moonset[1]].join(":")
-                                    : moonset.join(":")
-                                    : null
+                            moonset ? isNaN(moonset[0]) ? "N.A" : setTimeFormat(moonset) : null
                             }
                         </p>
                     </IconContainer>
