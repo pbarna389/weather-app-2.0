@@ -16,9 +16,9 @@ const SunMoonMeter = () => {
         <>
             {
                 forecastData ?
-                <div className="indicator-wrapper">
+                <section className="indicator-wrapper">
                     <WeatherIndicator astro={forecastData} />
-                </div>
+                </section>
                 : null
             }
         </>

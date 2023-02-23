@@ -23,6 +23,8 @@ export interface IWeatherContext {
     data: any,
     forecast: any,
     loc: any,
+    error: boolean,
+    loading: boolean,
 };
 
 export interface ICurrentWeather {
@@ -159,6 +161,6 @@ export interface IForecastCardProps extends ICurrentStatus {
 //REDUCER
 
 export type ActionType = {
-    type: "loading" | "fetchedLocation" | "fetchedAuto" | "fetchedData" | "fetchedPicture" | "fetchedForecast" | "error",
+    type: "loading" | "fetchedLocation" | "fetchedAuto" | "fetchedData" | "fetchedPicture" | "fetchedForecast" | "error" | "pictureError",
     payload: any;
 }

@@ -73,6 +73,7 @@ function useFetch (type: "data" | "picture" | "autocomplete", location: string |
 
         if (type === "data") {
             if (location) {
+                dispatch({type: "loading", payload: true});
                 const fetchData = async() => {
                     try {
                         const response = await fetch(url, options)
@@ -86,13 +87,16 @@ function useFetch (type: "data" | "picture" | "autocomplete", location: string |
                         if (!data) {
                             dispatch({type: "fetchedData", payload: null})
                         }
-
+                        dispatch({type: "error", payload: false})
                         dispatch({type: "fetchedData", payload: data?.current})
                         dispatch({type: "fetchedForecast", payload: data?.forecast})
                         dispatch({type: "fetchedLocation", payload: data.location})
+                        dispatch({type: "loading", payload: false});
 
                     } catch(error) {
                         dispatch({type: "fetchedData", payload: null})
+                        dispatch({type: "error", payload: true});
+                        dispatch({type: "loading", payload: false});
                         console.log(error);
                         controller.abort('cancel')
                     }
@@ -110,7 +114,8 @@ function useFetch (type: "data" | "picture" | "autocomplete", location: string |
         "loc": state.location,
         "picture": state.picture,
         "error": state.error,
-        "forecast": state.forecast
+        "forecast": state.forecast,
+        "loading": state.loading,
     }
 };
 

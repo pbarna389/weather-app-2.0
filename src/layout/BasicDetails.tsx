@@ -18,11 +18,11 @@ const BasicDetails = ():JSX.Element => {
         <>
             {
                 data ? 
-                    <div className="currentWeather-wrapper">
+                    <section className="currentWeather-wrapper">
                         <CurrentWeather locData={loc} currentData={data} />
                         <CurrentStatus isDay={data.is_day} code={data.condition.code} />
                         <Gallery forecastHours={forecast.forecastday[0].hour} />
-                    </div>
+                    </section>
                 : null
             }
         </>

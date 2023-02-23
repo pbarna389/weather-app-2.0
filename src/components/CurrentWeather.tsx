@@ -1,7 +1,6 @@
 import { ICurrentWeather } from "../@types/weather"
 import Portrait from "./Portrait";
 
-
 import "../styles/components/CurrentWeather.css";
 
 

@@ -76,7 +76,7 @@ const Gallery:React.FC<IGalleryProps> = ({ forecastHours }) => {
     }
 
     return (
-        <div className="forecast-wrapper" data-parent={"forecast"} >
+        <section className="forecast-wrapper" data-parent={"forecast"} >
             <div className="arrow-wrapper">
                 <div className="arrow-left" onClick={(e => handleClick(e, "left"))} >
                     <Arrow1 width={50} />
@@ -91,7 +91,7 @@ const Gallery:React.FC<IGalleryProps> = ({ forecastHours }) => {
                     showedHours.map((el) => <WeatherColumn key={el.time} minTemp={minTemp} time={el.time} maxTemp={maxTemp} currentTemp={el.temp_c} code={el.condition.code} isDay={el.is_day} />)
                 }
             </div>
-        </div>
+        </section>
     )
 }
 
