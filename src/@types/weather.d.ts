@@ -161,6 +161,6 @@ export interface IForecastCardProps extends ICurrentStatus {
 //REDUCER
 
 export type ActionType = {
-    type: "loading" | "fetchedLocation" | "fetchedAuto" | "fetchedData" | "fetchedPicture" | "fetchedForecast" | "error" | "pictureError",
+    type: "loading" | "fetchedLocation" | "fetchedAuto" | "fetchedData" | "fetchedPicture" | "fetchedForecast" | "error" | "pictureError" | "pictureLoading",
     payload: any;
 }

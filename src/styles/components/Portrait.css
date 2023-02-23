@@ -6,4 +6,10 @@
   background-position: right;
   border-radius: 50%;
   opacity: 0.8;
+}
+.portrait.no-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  rotate: 45deg;
 }/*# sourceMappingURL=Portrait.css.map */

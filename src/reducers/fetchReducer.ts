@@ -9,12 +9,15 @@ export const initialState = {
     picture: undefined,
     forecast: undefined,
     location: undefined,
+    pictureLoading: false,
 }
 
 const fetchReducer = (state:any, action: ActionType) => {
     switch(action.type) {
         case "loading": 
             return { ...state, loading: action.payload };
+        case "pictureLoading":
+            return { ...state, pictureLoading: action.payload}
         case 'fetchedAuto':
             return { ...state, autoComplete: action.payload};
         case 'fetchedData': 

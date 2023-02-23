@@ -7,4 +7,11 @@
 
     border-radius: 50%;
     opacity: 0.8;
+
+    &.no-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        rotate: 45deg;
+    }
 }

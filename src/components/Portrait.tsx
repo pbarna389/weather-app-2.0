@@ -19,7 +19,7 @@ const Portrait:React.FC = ():JSX.Element => {
         }
     };
 
-    const { picture } = useFetch("picture", location,`${PICTURE_SITE}?query=${location.toLowerCase()}&page=1&per_page=1`, options);
+    const { picture, pictureLoading, pictureError } = useFetch("picture", location,`${PICTURE_SITE}?query=${location.toLowerCase()}&page=1&per_page=1`, options);
 
     useEffect(() => {
 
@@ -32,7 +32,13 @@ const Portrait:React.FC = ():JSX.Element => {
     }, [picture])
 
     return (
-        <div className="portrait" style={{backgroundImage: `url( ${bgImage !== null ? bgImage : ""})`}}></div>
+        <>
+            { pictureLoading ? 
+                <div className="portrait no-img loading">Loading...</div>
+                : pictureError ? <div className="portrait no-img">No image available</div>
+                : <div className="portrait" style={{backgroundImage: `url( ${bgImage !== null ? bgImage : ""})`}}></div>
+            }
+        </>
     )
 }
 

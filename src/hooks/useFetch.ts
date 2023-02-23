@@ -45,6 +45,9 @@ function useFetch (type: "data" | "picture" | "autocomplete", location: string |
 
         if (type === "picture") {
             if (location) {
+                dispatch({type: "pictureError", payload: false});
+                dispatch({type: "pictureLoading", payload: true});
+
                 const fetchData = async() => {
                     try {
                         const response = await fetch(url, options)
@@ -56,13 +59,20 @@ function useFetch (type: "data" | "picture" | "autocomplete", location: string |
                         const data = await response.json();
 
                         if (data.photos.length === 0) {
+                            console.log(data);
                             dispatch({type: "fetchedPicture", payload: null})
+                            dispatch({type: "pictureError", payload: true});
+                            dispatch({type: "pictureLoading", payload: false});
+                        } else {
+                            dispatch({type: "fetchedPicture", payload: data?.photos})
+                            dispatch({type: "pictureError", payload: false});
+                            dispatch({type: "pictureLoading", payload: false});
                         }
 
-                        dispatch({type: "fetchedPicture", payload: data?.photos})
 
                     } catch(error) {
                         dispatch({type: "fetchedPicture", payload: null})
+                        dispatch({type: "pictureError", payload: true});
                         console.log(error);
                         controller.abort('cancel')
                     }
@@ -116,6 +126,8 @@ function useFetch (type: "data" | "picture" | "autocomplete", location: string |
         "error": state.error,
         "forecast": state.forecast,
         "loading": state.loading,
+        "pictureLoading": state.pictureLoading,
+        "pictureError": state.pictureError
     }
 };
 
