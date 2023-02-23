@@ -1,3 +1,5 @@
+@use "../shared/shared";
+
 .portrait {
     background-repeat: no-repeat;
     height: 10rem;
@@ -13,5 +15,9 @@
         justify-content: center;
         align-items: center;
         rotate: 45deg;
+
+        @include shared.phones {
+            font-size: 0.9rem;
+        }
     }
 }

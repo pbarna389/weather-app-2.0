@@ -6,7 +6,8 @@
     margin: 2rem 0;
 
     @include shared.phones {
-        
+        margin: 0;
+        height: 7.5rem;
     }
 
     @include shared.tablets{
@@ -67,6 +68,10 @@
         &:hover {
             font-size: 1.5rem;
             opacity: 1;
+        }
+
+        @include shared.phones {
+            top: 100%;
         }
 
 

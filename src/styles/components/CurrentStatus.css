@@ -3,6 +3,12 @@
   width: 25vw;
   margin: 2rem 0;
 }
+@media (min-width: 320px) and (max-width: 640px) {
+  .status-wrapper {
+    margin: 0;
+    height: 7.5rem;
+  }
+}
 @media (min-width: 640px) and (max-width: 1280px) {
   .status-wrapper {
     width: 50%;
@@ -51,6 +57,11 @@
 .status-wrapper .forecast-status:hover {
   font-size: 1.5rem;
   opacity: 1;
+}
+@media (min-width: 320px) and (max-width: 640px) {
+  .status-wrapper .forecast-status {
+    top: 100%;
+  }
 }
 
 @keyframes animation1-a {
