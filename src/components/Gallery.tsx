@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useIntersecObserver } from "../hooks/useIntersecObserver";
 import { IForecastHours, IGalleryProps } from "../@types/weather";
 import WeatherColumn from "./WeatherColumn";
 import { Arrow1, Arrow2 } from "../assets/React-Icons-modified/SVGs";
@@ -10,6 +11,9 @@ const Gallery:React.FC<IGalleryProps> = ({ forecastHours }) => {
     const [showedHours, setShowedHours] = useState<IForecastHours[]>();
     const [comesFromLeft, setComesFromLeft] = useState<boolean | null>(null);
     const [goesToRight, setGoesToRight] = useState<boolean | null>(null);
+    const [visible, setVisible] = useState<boolean>(false);
+
+    const [ elementRef ] = useIntersecObserver(setVisible);
 
     useEffect(() => {
         setHoursToRotate(forecastHours);
@@ -76,7 +80,7 @@ const Gallery:React.FC<IGalleryProps> = ({ forecastHours }) => {
     }
 
     return (
-        <section className="forecast-wrapper" data-parent={"forecast"} >
+        <section ref={elementRef && elementRef} className={`forecast-wrapper ${visible ? "shown" : ""}`} data-parent={"forecast"} >
             <div className="arrow-wrapper">
                 <div className="arrow-left" onClick={(e => handleClick(e, "left"))} >
                     <Arrow1 width={50} />

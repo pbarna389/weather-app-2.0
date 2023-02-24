@@ -1,16 +1,20 @@
+import { useState } from "react";
 import { ICurrentWeather } from "../@types/weather"
 import Portrait from "./Portrait";
-
+import { useIntersecObserver } from "../hooks/useIntersecObserver";
 import "../styles/components/CurrentWeather.css";
 
 
 const CurrentWeather:React.FC<ICurrentWeather> = ({ locData, currentData}):JSX.Element => {
+    const [visible, setVisible] = useState<boolean>(false);
+    const [ elementRef ] = useIntersecObserver(setVisible)
+
     return (
         <>
         {
             locData && currentData ? 
             <>
-                <div className="loc-wrapper">
+                <div ref={elementRef && elementRef} className={`loc-wrapper ${visible ? "shown" : ""}`}>
                     <div className="loc-basic">
                         <div className="loc-data">
                             <h3>{locData.name}</h3>

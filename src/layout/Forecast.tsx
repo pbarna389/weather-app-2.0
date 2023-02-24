@@ -1,13 +1,16 @@
 import { useContext, useState, useEffect } from 'react';
 import { weatherContext } from '../context/weatherContext';
-import { IWeatherContext, IforecastDays, Iastro} from '../@types/weather';
+import { IWeatherContext } from '../@types/weather';
 import ForecastCard from '../components/ForecastCard';
+import { useIntersecObserver } from "../hooks/useIntersecObserver"; 
 
 import "../styles/layout/Forecast.css";
 
 const Forecast = () => {
     const [forecastDays, setForecastDays] = useState<any[]>();
     const {forecast} = useContext(weatherContext) as IWeatherContext;
+    const [visible, setVisible] = useState<boolean>(false);
+    const [ elementRef ] = useIntersecObserver(setVisible);
 
     useEffect(() => {
         if (forecast) {
@@ -18,7 +21,7 @@ const Forecast = () => {
     }, [forecast])
 
     return (
-        <section className="fullForecast-wrapper">
+        <section ref={elementRef && elementRef} className={`fullForecast-wrapper ${visible ? "shown" : ""}`}>
             {
                 forecastDays ?
                 forecastDays.map(el => <ForecastCard key={el.date} astro={el.astro} code={el.day.condition.code} isDay={true} date={el.date} mintemp={el.day.mintemp_c} maxtemp={el.day.maxtemp_c} />)

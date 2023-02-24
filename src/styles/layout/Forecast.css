@@ -3,4 +3,11 @@
   justify-content: space-between;
   overflow: hidden;
   margin: 2rem 0;
+  opacity: 0;
+  transform: translateX(-5rem);
+  transition: all 1s ease-in;
+}
+.fullForecast-wrapper.shown {
+  opacity: 1;
+  transform: translateX(0rem);
 }/*# sourceMappingURL=Forecast.css.map */

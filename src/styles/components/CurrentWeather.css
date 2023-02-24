@@ -1,6 +1,13 @@
 .loc-wrapper {
   width: 25vw;
   margin: 2rem 0;
+  opacity: 0;
+  transform: translateX(-10rem);
+  transition: all 0.3s ease-in;
+}
+.loc-wrapper.shown {
+  opacity: 1;
+  transform: translateX(0rem);
 }
 @media (min-width: 320px) and (max-width: 640px) {
   .loc-wrapper {

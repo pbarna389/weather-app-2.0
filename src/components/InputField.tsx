@@ -1,12 +1,17 @@
+import { useState } from "react";
 import { ChangeEvent, useContext } from 'react'
 import { IWeatherContext } from '../@types/weather';
 import { weatherContext } from '../context/weatherContext';
 import { SearchIcon } from '../assets/React-Icons-modified/SVGs';
+import { useIntersecObserver } from "../hooks/useIntersecObserver";
 
 import "../styles/components/InputField.css"
 
 const InputField:React.FC = ():JSX.Element => {
     const { query, setQuery, suggestions, setLocation } = useContext(weatherContext) as IWeatherContext;
+    const [visible, setVisible] = useState<boolean>(false);
+
+    const [ elementRef ] = useIntersecObserver(setVisible);
 
     const handleChange = (e:ChangeEvent<HTMLInputElement>):void => {
         const value = e.target.value;
@@ -39,7 +44,7 @@ const InputField:React.FC = ():JSX.Element => {
     }
     
     return (
-        <div className="input-wrapper">
+        <div ref={elementRef && elementRef} className={`input-wrapper ${visible ? "shown" : ""}`}>
             <input type="text" name="" id="" value={query} placeholder="Search..." onChange={e => handleChange(e)} data-input="search" />
             <button onClick={e => handleButtonClick(e)} data-svg="search"><SearchIcon width={25} /></button>
             <div className="autocomplete">

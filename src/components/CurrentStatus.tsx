@@ -1,11 +1,16 @@
+import { useState } from "react";
+import { useIntersecObserver } from "../hooks/useIntersecObserver"; 
 import { Moon, Sun, Cloud, CloudTwo, Fog, RainyCloud, SnowyCloud, Thunder, DrizzleRain, ThermometerCold, PelletCloud } from "../assets/React-Icons-modified/SVGs";
 import { ICurrentStatus } from "../@types/weather";
 
 import "../styles/components/CurrentStatus.css"
 
 const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):JSX.Element => {
+    const [visible, setVisible] = useState<boolean>(false);
+    const [ elementRef ] = useIntersecObserver(setVisible);
+
     return (
-            <div className="status-wrapper" style={{width: type === "forecast" ? "3rem" : "", flexDirection: type !== "forecast" ? "column" : "row"}}>
+            <div ref={elementRef && elementRef} className={`status-wrapper ${visible ? "shown" : ""}`} style={{width: type === "forecast" ? "3rem" : "", flexDirection: type !== "forecast" ? "column" : "row"}}>
                 {
                     // !isDay ?
                     code === 1000 ?
@@ -13,9 +18,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                         <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                             {
                                 !isDay ?
-                                    <Moon width={type === "forecast" ? 50 : 150} />
+                                    <Moon width={type === "forecast" ? 50 : 175} />
                                 :
-                                    <Sun width={type === "forecast" ? 50 : 150} />
+                                    <Sun width={type === "forecast" ? 50 : 175} />
                             }
                         </div>
                     </>
@@ -24,9 +29,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 125} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 125} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{top: type === "forecast" ? "55%" : "20%"}}>
@@ -38,13 +43,13 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 125} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 125} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{top: type === "forecast" ? "55%" : "20%"}}>
-                                <Cloud width={type === "forecast" ? 45 : 150} />
+                                <Cloud width={type === "forecast" ? 45 : 140} />
                             </div>
                         </>
                     : code === 1009 ?
@@ -52,16 +57,16 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 125} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 125} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{top: type === "forecast" ? "55%" : "20%"}}>
-                                <Cloud width={type === "forecast" ? 40 : 150} />
+                                <Cloud width={type === "forecast" ? 40 : 140} />
                             </div>
                             <div className="icon-3" style={{top: type === "forecast" ? "65%" : "25%"}}>
-                                <CloudTwo width={type === "forecast" ? 40 : 150} />
+                                <CloudTwo width={type === "forecast" ? 40 : 140} />
                             </div>                            
                         </>
                     : code === 1030 ?
@@ -69,13 +74,13 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 125} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 125} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{top: type === "forecast" ? "55%" : "20%", left: "50%", opacity: "0.5", rotate: "270deg"}}>
-                                <Fog width={type === "forecast" ? 46 : 140} />
+                                <Fog width={type === "forecast" ? 46 : 100} />
                             </div>                        
                         </>
                     : code === 1063 ?
@@ -83,9 +88,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{top: type === "forecast" ? "55%" : "20%", opacity: "0.5"}} >
@@ -100,9 +105,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{top: type === "forecast" ? "55%" : "20%", opacity: "0.5"}} >
@@ -117,9 +122,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{top: type === "forecast" ? "55%" : "20%", opacity: "0.5"}} >
@@ -134,9 +139,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{top: type === "forecast" ? "55%" : "20%", opacity: "0.5"}} >
@@ -165,7 +170,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                                 <div className="icon-3" style={{top: type === "forecast" ? "60%" : "25%"}}>
                                     <CloudTwo width={type === "forecast" ? 50 : 150} />
                                 </div>
-                                <div className="icon-4" style={{top: "70%", left: "42%"}} >
+                                <div className="icon-4" style={{top: type === "forecast" ? "80%" : "37%", left: "42%"}} >
                                     {
                                         !isDay ?
                                         <Thunder width={type === "forecast" ? 20 : 60} color1="#ffffff" color2="#6e1bde" />
@@ -179,16 +184,16 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{top: type === "forecast" ? "55%" : "20%"}}>
-                                <SnowyCloud width={type === "forecast" ? 35 : 90} />
+                                <SnowyCloud width={type === "forecast" ? 40 : 125} />
                             </div>
                             <div className="icon-3" style={{top: type === "forecast" ? "60%" : "25%", left: "55%"}} >
-                                <SnowyCloud width={type === "forecast" ? 25 : 90} />
+                                <SnowyCloud width={type === "forecast" ? 35 : 125} />
                             </div>
                             <div className="icon-4" style={{opacity: "0.3", top: "60%", left: "22%", rotate: "90deg"}} >
                                 <Fog width={type === "forecast" ? 40 : 100} />
@@ -199,19 +204,19 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
-                            <div className="icon-2" >
-                                <SnowyCloud width={type === "forecast" ? 40 : 100} />
+                                <div className="icon-2" style={{top: type === "forecast" ? "55%" : "20%"}}>
+                                <SnowyCloud width={type === "forecast" ? 40 : 125} />
                             </div>
                             <div className="icon-3" style={{top: "52%", left: "60%"}} >
-                                <SnowyCloud width={type === "forecast" ? 42 : 105} />
+                                <SnowyCloud width={type === "forecast" ? 42 : 125} />
                             </div>
                             <div className="icon-4" style={{top: "56%", left: "50%", zIndex:"3"}} >
-                                <SnowyCloud width={type === "forecast" ? 45 : 110} />
+                                <SnowyCloud width={type === "forecast" ? 45 : 115} />
                             </div>                              
                         </>
                     : code === 1135 ?
@@ -219,12 +224,12 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
-                            <div className="icon-2" style={{top: "52%", left: "60%"}} >
+                            <div className="icon-2" style={{top: type === "forecast" ? "55%" : "20%", left: "60%"}} >
                                 <Fog width={type === "forecast" ? 42 : 105} />
                             </div>
                             <div className="icon-3" style={{top: "52%", left: "42%", zIndex:"3"}} >
@@ -236,9 +241,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{top: "60%", left: "60%", opacity: "0.6"}} >
@@ -256,9 +261,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2"  style={{opacity: "0.5"}} >
@@ -273,9 +278,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2"  style={{opacity: "0.75"}} >
@@ -290,9 +295,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2"  style={{top: "50%", left: "50%",opacity: "0.75"}} >
@@ -307,9 +312,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2"  style={{opacity: "0.95"}} >
@@ -327,9 +332,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{left: "45%"}} >
@@ -341,9 +346,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{left: "45%"}} >
@@ -355,9 +360,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{left: "45%"}} >
@@ -372,9 +377,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{left: "37%"}} >
@@ -392,9 +397,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{left: "50%"}} >
@@ -409,9 +414,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{left: "44%"}} >
@@ -429,9 +434,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{left: "44%"}} >
@@ -446,9 +451,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{left: "44%"}} >
@@ -463,9 +468,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{left: "50%", opacity: "0.8"}} >
@@ -477,9 +482,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{left: "50%", opacity: "1"}} >
@@ -491,12 +496,12 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
-                            <div className="icon-2" >
+                                <div className="icon-2" style={{top: type === "forecast" ? "55%" : "20%"}}>
                                 <SnowyCloud width={type === "forecast" ? 32 : 85} />
                             </div>
                             <div className="icon-3" style={{top: "52%", left: "60%"}} >
@@ -508,9 +513,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{top: type === "forecast" ? "70%" : "20%"}}>
@@ -525,9 +530,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{top: type === "forecast" ? "70%" : "20%", opacity: "0.8"}} >
@@ -545,9 +550,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{top: type === "forecast" ? "70%" : "20%"}}>
@@ -565,9 +570,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{zIndex: "0", top: "52%", left: "40%"}} >
@@ -585,9 +590,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{left: "37%"}} >
@@ -605,9 +610,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{left: "37%"}} >
@@ -625,9 +630,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{left: "37%"}} >
@@ -645,9 +650,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{left: "40%"}} >
@@ -665,9 +670,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{left: "40%"}} >
@@ -685,9 +690,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{left: "37%"}} >
@@ -705,9 +710,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{left: "37%"}} >
@@ -725,9 +730,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{left: "37%"}} >
@@ -745,9 +750,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{left: "37%"}} >
@@ -765,9 +770,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{top: "52%", left: "50%"}} >
@@ -787,9 +792,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{top: "52%", left: "60%"}} >
@@ -812,9 +817,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{top: "56%", left: "50%"}} >
@@ -834,9 +839,9 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-1" style={{top: type === "forecast" ? "50%" : "20%", animationName: type === "forecast" ? "animation1-b" : "animation1-a"}}>
                                 {
                                     !isDay ?
-                                    <Moon width={type === "forecast" ? 40 : 100} />
+                                    <Moon width={type === "forecast" ? 40 : 150} />
                                     :
-                                    <Sun width={type === "forecast" ? 40 : 100} />
+                                    <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
                             <div className="icon-2" style={{top: "52%", left: "60%"}} >

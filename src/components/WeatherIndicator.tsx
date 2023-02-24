@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useIntersecObserver } from "../hooks/useIntersecObserver";
 import { Iastro } from "../@types/weather";
 import { SunRise, SunSet, MoonRise, MoonSet } from "../assets/React-Icons-modified/SVGs";
 import IconContainer from "./IconContainer";
@@ -63,10 +64,17 @@ const WeatherIndicator:React.FC<IWeatherIndicatorProps> = ({ astro }) => {
     const setMoonDown = () => {
         const moonTimeDef = astroData?.moonset.split(' ').pop();
         let moonSetTime = astroData?.moonset.split(' ').shift()?.split(":").map(Number)
+        console.log(astroData?.moonset);
 
-        if (moonTimeDef === "PM") {
+        if (moonTimeDef === "AM") {
+            if (moonSetTime && moonSetTime[0] === 12) {
+                moonSetTime[0] = moonSetTime[0] - 12;
+                setMoonset(moonSetTime);
+                console.log(moonSetTime)
+            }
+        } else if (moonTimeDef === "PM") {
             if (moonSetTime) {
-                moonSetTime[0] = moonSetTime[0] + 12
+                moonSetTime[0] = moonSetTime[0] + 12;
                 setMoonset(moonSetTime)
             }
         } else {
@@ -86,7 +94,7 @@ const WeatherIndicator:React.FC<IWeatherIndicatorProps> = ({ astro }) => {
     return (
         <>{
             astroData ?
-                <div className="weather-indicator">
+                <div  className={`weather-indicator`}>
                     <IconContainer type="sun" sunrise={sunrise} sunset={sunset} rise={true}>
                         <p>
                             {

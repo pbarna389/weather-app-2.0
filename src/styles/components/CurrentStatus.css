@@ -2,10 +2,14 @@
   position: relative;
   width: 25vw;
   margin: 2rem 0;
+  transition: opacity 0.5s ease-in;
+  opacity: 0;
+}
+.status-wrapper.shown {
+  opacity: 1;
 }
 @media (min-width: 320px) and (max-width: 640px) {
   .status-wrapper {
-    margin: 0;
     height: 7.5rem;
   }
 }
@@ -24,6 +28,9 @@
 }
 .status-wrapper:hover .icon-3 {
   animation: animation3 1.5s infinite linear;
+}
+.status-wrapper:hover .icon-4 {
+  animation: animation2 1.5s infinite linear;
 }
 .status-wrapper .icon-1, .status-wrapper .icon-2, .status-wrapper .icon-3, .status-wrapper .icon-4 {
   position: absolute;

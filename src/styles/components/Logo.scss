@@ -1,6 +1,15 @@
 @use "../shared/shared";
 
 .logo-wrapper {
+    transform: translateX(-20rem);
+    opacity: 0;
+    transition: all 0.5s ease-in;
+
+    &.show {
+        transform: translateX(0rem);
+        opacity: 1;
+    }
+
     @include shared.phones {
         text-align: center;
         margin: 1rem 0;

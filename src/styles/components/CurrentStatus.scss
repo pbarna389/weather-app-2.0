@@ -5,8 +5,14 @@
     width: 25vw;
     margin: 2rem 0;
 
+    transition: opacity 0.5s ease-in;
+    opacity: 0;
+
+    &.shown {
+        opacity: 1;
+    }
+
     @include shared.phones {
-        margin: 0;
         height: 7.5rem;
     }
 
@@ -27,6 +33,10 @@
 
         .icon-3 {
             animation: animation3 1.5s infinite linear;
+        }
+
+        .icon-4 {
+            animation: animation2 1.5s infinite linear;
         }
     }
     // border: 1px solid white;
@@ -51,6 +61,10 @@
         top: 30%;
         left: 55%;
         z-index: 1;
+    }
+
+    .icon-4 {
+
     }
 
     .forecast-status {
