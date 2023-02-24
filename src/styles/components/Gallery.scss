@@ -42,6 +42,11 @@
             left: -100rem;
             transform: translateX(100rem);
             transition: transform 0.2s ease-in-out;
+
+            @include shared.uhd-desktops {
+                left: -200rem;
+                transform: translate(200rem);
+            }
         }
 
         &.goesToLeft {
@@ -55,6 +60,11 @@
             left: 100rem;
             transform: translateX(-100rem);
             transition: transform 0.2s ease-in-out;
+
+            @include shared.uhd-desktops {
+                left: 200rem;
+                transform: translate(-200rem);
+            }
 
             // @include shared.phones {
             //     transform: translateX(-285%)

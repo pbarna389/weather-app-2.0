@@ -68,4 +68,12 @@
         width: 3rem;
         margin: 0 1rem;
     }
+
+    @include shared.desktops {
+        width: 4rem;
+    }
+
+    @include shared.uhd-desktops {
+        width: 5rem;
+    }
 }

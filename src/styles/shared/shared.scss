@@ -21,10 +21,9 @@ $text-font: 'Montserrat', sans-serif;
 $padding: 2.5rem;
 
 $mobile-width: 320px;
-$gallery-mobile-width01: 340px;
-$gallery-mobile-width02: 400px;
 $tablet-width: 640px;
 $desktop-width: 1280px;
+$gallery-desktop: 1500px;
 $uhd-width: 1980px;
 
 @mixin phones {
@@ -39,6 +38,12 @@ $uhd-width: 1980px;
     }
 };
 
+@mixin gallery-desktop {
+    @media (min-width: #{$desktop-width}) and (max-width: #{$gallery-desktop}) {
+        @content
+    }
+};
+
 @mixin desktops {
     @media (min-width: #{$desktop-width}) and (max-width: #{$uhd-width}) {
         @content
@@ -46,7 +51,7 @@ $uhd-width: 1980px;
 };
 
 @mixin uhd-desktops {
-    @media (min-width: #{$hd-width}) {
+    @media (min-width: #{$uhd-width}) {
         @content
     }
-}
+};

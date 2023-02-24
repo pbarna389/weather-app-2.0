@@ -62,4 +62,9 @@
     width: 3rem;
     margin: 0 1rem;
   }
+}
+@media (min-width: 1280px) and (max-width: 1980px) {
+  .column {
+    width: 4rem;
+  }
 }/*# sourceMappingURL=WeatherColumns.css.map */

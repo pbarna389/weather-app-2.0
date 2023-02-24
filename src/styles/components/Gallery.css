@@ -40,6 +40,12 @@
   transform: translateX(100rem);
   transition: transform 0.2s ease-in-out;
 }
+@media (min-width: 1980px) {
+  .forecast-wrapper .columns.comesFromLeft {
+    left: -200rem;
+    transform: translate(200rem);
+  }
+}
 .forecast-wrapper .columns.goesToLeft {
   position: relative;
   transform: translateX(-200%);
@@ -50,6 +56,12 @@
   left: 100rem;
   transform: translateX(-100rem);
   transition: transform 0.2s ease-in-out;
+}
+@media (min-width: 1980px) {
+  .forecast-wrapper .columns.comesFromRight {
+    left: 200rem;
+    transform: translate(-200rem);
+  }
 }
 .forecast-wrapper .status-wrapper {
   border: none;
