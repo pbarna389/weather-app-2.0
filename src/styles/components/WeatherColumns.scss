@@ -57,6 +57,10 @@
         @include shared.tablets {
             font-size: 0.54rem;
         }
+
+        @include shared.desktops {
+            font-size: 0.6rem;
+        }
     }
 
     @include shared.phones {

@@ -51,6 +51,11 @@
     font-size: 0.54rem;
   }
 }
+@media (min-width: 1280px) and (max-width: 1980px) {
+  .column p {
+    font-size: 0.6rem;
+  }
+}
 @media (min-width: 320px) and (max-width: 640px) {
   .column {
     max-width: 2rem;
@@ -66,5 +71,10 @@
 @media (min-width: 1280px) and (max-width: 1980px) {
   .column {
     width: 4rem;
+  }
+}
+@media (min-width: 1980px) {
+  .column {
+    width: 5rem;
   }
 }/*# sourceMappingURL=WeatherColumns.css.map */
