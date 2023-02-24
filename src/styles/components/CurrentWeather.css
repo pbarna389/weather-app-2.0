@@ -43,6 +43,28 @@
 .loc-wrapper .loc-basic .loc-data {
   width: 50%;
 }
+.loc-wrapper .loc-basic .loc-data h3, .loc-wrapper .loc-basic .loc-data h4, .loc-wrapper .loc-basic .loc-data h5 {
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in;
+}
+.loc-wrapper .loc-basic .loc-data h3:hover, .loc-wrapper .loc-basic .loc-data h4:hover, .loc-wrapper .loc-basic .loc-data h5:hover {
+  opacity: 1;
+}
+.loc-wrapper .loc-basic .loc-data h3 {
+  font-size: 2.2rem;
+}
+@media (min-width: 320px) and (max-width: 640px) {
+  .loc-wrapper .loc-basic .loc-data h3 {
+    font-size: 1.9rem;
+  }
+}
+.loc-wrapper .loc-basic .loc-data h4 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+.loc-wrapper .loc-basic .loc-data h5 {
+  font-size: 0.9rem;
+}
 @media (min-width: 320px) and (max-width: 640px) {
   .loc-wrapper .loc-basic .loc-data {
     width: 50%;
@@ -68,4 +90,18 @@
 }
 .loc-wrapper .loc-details {
   margin: 2rem 0;
+}
+.loc-wrapper .loc-details h2, .loc-wrapper .loc-details h5 {
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in;
+}
+.loc-wrapper .loc-details h2:hover, .loc-wrapper .loc-details h5:hover {
+  opacity: 1;
+}
+.loc-wrapper .loc-details h2 {
+  font-size: 1.7rem;
+}
+.loc-wrapper .loc-details h5 {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
 }/*# sourceMappingURL=CurrentWeather.css.map */
