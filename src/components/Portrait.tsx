@@ -32,13 +32,13 @@ const Portrait:React.FC = ():JSX.Element => {
     }, [picture])
 
     return (
-        <>
+        <div className="portrait-wrapper">
             { pictureLoading ? 
                 <div className="portrait no-img loading">Loading...</div>
                 : pictureError ? <div className="portrait no-img">No image available</div>
                 : <div className="portrait" style={{backgroundImage: `url( ${bgImage !== null ? bgImage : ""})`}}></div>
             }
-        </>
+        </div>
     )
 }
 

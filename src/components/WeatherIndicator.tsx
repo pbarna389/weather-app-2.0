@@ -50,6 +50,7 @@ const WeatherIndicator:React.FC<IWeatherIndicatorProps> = ({ astro }) => {
     const setMoonUp = () => {
             const moonTimeDef = astroData?.moonrise?.split(' ').pop();
             let moonSetTime = astroData?.moonrise.split(' ').shift()?.split(":").map(Number)
+            console.log(astroData, moonSetTime, moonTimeDef)
     
             if (moonTimeDef === "PM") {
                 if (moonSetTime) {
@@ -64,19 +65,25 @@ const WeatherIndicator:React.FC<IWeatherIndicatorProps> = ({ astro }) => {
     const setMoonDown = () => {
         const moonTimeDef = astroData?.moonset.split(' ').pop();
         let moonSetTime = astroData?.moonset.split(' ').shift()?.split(":").map(Number)
-        console.log(astroData?.moonset);
+        console.log(astroData, moonTimeDef, moonSetTime);
 
         if (moonTimeDef === "AM") {
             if (moonSetTime && moonSetTime[0] === 12) {
                 moonSetTime[0] = moonSetTime[0] - 12;
                 setMoonset(moonSetTime);
                 console.log(moonSetTime)
-            }
-        } else if (moonTimeDef === "PM") {
+            } 
+        } else {
+            setMoonset(moonSetTime)
+        }
+        
+        if (moonTimeDef === "PM") {
+            
             if (moonSetTime) {
                 moonSetTime[0] = moonSetTime[0] + 12;
                 setMoonset(moonSetTime)
             }
+
         } else {
             setMoonset(moonSetTime)
         }

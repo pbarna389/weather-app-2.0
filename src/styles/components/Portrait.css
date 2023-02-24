@@ -1,17 +1,35 @@
-.portrait {
-  background-repeat: no-repeat;
+.portrait-wrapper {
   height: 10rem;
   width: 10rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.portrait {
+  position: absolute;
+  background-repeat: no-repeat;
+  height: inherit;
+  width: inherit;
   background-size: cover;
   background-position: right;
-  border-radius: 50%;
+  border-radius: inherit;
   opacity: 0.8;
+  transition: all 0.5s ease-in;
+}
+.portrait:hover {
+  opacity: 1;
+  scale: 1.3;
 }
 .portrait.no-img {
   display: flex;
   justify-content: center;
   align-items: center;
   rotate: 45deg;
+  transition: all 0.2s ease-in;
+}
+.portrait.no-img:hover {
+  scale: 1;
 }
 @media (min-width: 320px) and (max-width: 640px) {
   .portrait.no-img {
