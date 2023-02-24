@@ -16,9 +16,6 @@
     font-size: 0.3rem;
   }
 }
-.column-wrapper:hover {
-  scale: 1.05;
-}
 .column-wrapper:hover .status-wrapper {
   opacity: 1;
   height: 5rem;
