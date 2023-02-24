@@ -79,7 +79,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                                     <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
-                            <div className="icon-2" style={{top: type === "forecast" ? "55%" : "30%", left: "50%", opacity: "0.5", rotate: "270deg"}}>
+                            <div className="icon-2" style={{top: type === "forecast" ? "0%" : "30%", left: "50%", opacity: "0.5", rotate: "270deg"}}>
                                 <Fog width={type === "forecast" ? 46 : 100} />
                             </div>                        
                         </>
@@ -150,7 +150,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-3" style={{opacity: "0.5", top: type === "forecast" ? "60%" : "35%", left: "55%"}} >
                                 <SnowyCloud width={type === "forecast" ? 32 : 75} />
                             </div>
-                            <div className="icon-4" style={{opacity: "0.1", top: type === "forecast" ? "62%" : "42%", left: "22%", rotate: "90deg"}} >
+                            <div className="icon-4" style={{opacity: "0.1", top: type === "forecast" ? "0%" : "42%", left: "22%", rotate: "90deg"}} >
                                 <Fog width={type === "forecast" ? 40 : 100} />
                             </div>                               
                         </>
@@ -195,7 +195,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-3" style={{top: type === "forecast" ? "60%" : "35%", left: "55%"}} >
                                 <SnowyCloud width={type === "forecast" ? 35 : 125} />
                             </div>
-                            <div className="icon-4" style={{opacity: "0.3", top: type === "forecast" ? "80%" : "42%", left: "22%", rotate: "90deg"}} >
+                            <div className="icon-4" style={{opacity: "0.3", top: type === "forecast" ? "0%" : "42%", left: "22%", rotate: "90deg"}} >
                                 <Fog width={type === "forecast" ? 40 : 100} />
                             </div>                               
                         </>
@@ -232,7 +232,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-2" style={{top: type === "forecast" ? "55%" : "30%", left: "60%"}} >
                                 <Fog width={type === "forecast" ? 42 : 105} />
                             </div>
-                            <div className="icon-3" style={{top: type === "forecast" ? "60%" : "35%", left: "42%", zIndex:"3"}} >
+                            <div className="icon-3" style={{top: type === "forecast" ? "0%" : "35%", left: "42%", zIndex:"3"}} >
                                 <Fog width={type === "forecast" ? 45 : 110} />
                             </div>                              
                         </>
@@ -246,10 +246,10 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                                     <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
-                            <div className="icon-2" style={{top: type === "forecast" ? "55%" : "30%", left: "60%", opacity: "0.6"}} >
+                            <div className="icon-2" style={{top: type === "forecast" ? "0%" : "30%", left: "60%", opacity: "0.6"}} >
                                 <Fog width={type === "forecast" ? 40 : 100} />
                             </div>
-                            <div className="icon-3" style={{top: type === "forecast" ? "60%" : "35%", left: "42%", zIndex:"3", opacity: "0.6"}} >
+                            <div className="icon-3" style={{top: type === "forecast" ? "0%" : "35%", left: "42%", zIndex:"3", opacity: "0.6"}} >
                                 <Fog width={type === "forecast" ? 40 : 100} />
                             </div>
                             <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "50%", zIndex:"3", opacity: "0.95"}} >
@@ -518,10 +518,10 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                                     <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
-                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%"}}>
+                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", animationName: "animation2-b"}}>
                                 <SnowyCloud width={type === "forecast" ? 40 : 100} />
                             </div>
-                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "60%"}} >
+                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "60%", animationName: "animation3-b"}} >
                                 <SnowyCloud width={type === "forecast" ? 40 : 100} />
                             </div>    
                         </>
@@ -535,13 +535,13 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                                     <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
-                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", opacity: "0.8"}} >
+                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", opacity: "0.8", animationName: "animation2-b"}} >
                                 <SnowyCloud width={type === "forecast" ? 40 : 100} />
                             </div>
-                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "60%", opacity: "0.8"}} >
+                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "60%", opacity: "0.8", animationName: "animation3-b"}} >
                                 <SnowyCloud width={type === "forecast" ? 42 : 105} />
                             </div>
-                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "60%", opacity: "0.8"}} >
+                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "60%", opacity: "0.8", animationName: "animation4-a"}} >
                                 <SnowyCloud width={type === "forecast" ? 45 : 110} />
                             </div>                              
                         </>
@@ -555,13 +555,13 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                                     <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
-                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%"}}>
+                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", animationName: "animation2-b"}}>
                                 <SnowyCloud width={type === "forecast" ? 40 : 100} />
                             </div>
-                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "60%"}} >
+                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "60%", animationName: "animation3-b"}} >
                                 <SnowyCloud width={type === "forecast" ? 42 : 105} />
                             </div>
-                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "60%"}} >
+                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "60%", animationName: "animation4-a"}} >
                                 <SnowyCloud width={type === "forecast" ? 45 : 110} />
                             </div>                              
                         </>
@@ -575,13 +575,13 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                                     <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
-                            <div className="icon-2" style={{zIndex: "0", top: type === "forecast" ? "70%" : "30%", left: "40%"}} >
+                            <div className="icon-2" style={{zIndex: "0", top: type === "forecast" ? "70%" : "30%", left: "40%", animationName: "animation2-b"}} >
                                 <PelletCloud width={type === "forecast" ? 40 : 100} />
                             </div>
-                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "60%"}} >
+                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "60%", animationName: "animation3-b"}} >
                                 <PelletCloud width={type === "forecast" ? 42 : 105} />
                             </div>
-                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "50%"}} >
+                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "50%", animationName: "animation4-a"}} >
                                 <PelletCloud width={type === "forecast" ? 45 : 110} />
                             </div>                              
                         </>
@@ -595,13 +595,13 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                                     <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
-                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "37%"}} >
+                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "37%", animationName: "animation2-b"}} >
                                 <RainyCloud width={type === "forecast" ? 32 : 75} />
                             </div>
-                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "50%"}} >
+                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "50%", animationName: "animation3-b"}} >
                                 <RainyCloud width={type === "forecast" ? 32 : 75} />
                             </div>
-                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "60%"}} >
+                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "60%", animationName: "animation4-a"}} >
                                 <RainyCloud width={type === "forecast" ? 32 : 75} />
                             </div>
                         </>
@@ -615,13 +615,13 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                                     <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
-                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "37%"}} >
+                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "37%", animationName: "animation2-b"}} >
                                 <RainyCloud width={type === "forecast" ? 20 : 87} />
                             </div>
-                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "50%"}} >
+                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "50%", animationName: "animation3-b"}} >
                                 <RainyCloud width={type === "forecast" ? 20 : 87} />
                             </div>
-                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "60%"}} >
+                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "60%", animationName: "animation4-a"}} >
                                 <RainyCloud width={type === "forecast" ? 20 : 87} />
                             </div>
                         </>
@@ -635,13 +635,13 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                                     <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
-                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "37%"}} >
+                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "37%", animationName: "animation2-b"}} >
                                 <RainyCloud width={type === "forecast" ? 40 : 100} />
                             </div>
-                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "50%"}} >
+                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "50%", animationName: "animation3-b"}} >
                                 <RainyCloud width={type === "forecast" ? 40 : 100} />
                             </div>
-                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "60%"}} >
+                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "60%", animationName: "animation4-a"}} >
                                 <RainyCloud width={type === "forecast" ? 40 : 100} />
                             </div>
                         </>
@@ -655,13 +655,13 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                                     <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
-                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "40%"}} >
+                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "40%", animationName: "animation2-b"}} >
                                 <DrizzleRain width={type === "forecast" ? 32 : 75} />
                             </div>
-                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "50%"}} >
+                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "50%", animationName: "animation3-b"}} >
                                 <SnowyCloud width={type === "forecast" ? 32 : 75} />
                             </div>
-                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "60%"}} >
+                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "60%", animationName: "animation4-a"}} >
                                 <DrizzleRain width={type === "forecast" ? 32 : 75} />
                             </div>
                         </>
@@ -675,13 +675,13 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                                     <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
-                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "40%"}} >
+                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "40%", animationName: "animation2-b"}} >
                                 <DrizzleRain width={type === "forecast" ? 40 : 100} />
                             </div>
-                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "50%"}} >
+                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "50%", animationName: "animation3-b"}} >
                                 <SnowyCloud width={type === "forecast" ? 40 : 100} />
                             </div>
-                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "60%"}} >
+                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "60%", animationName: "animation4-a"}} >
                                 <DrizzleRain width={type === "forecast" ? 40 : 100} />
                             </div>
                         </>
@@ -695,13 +695,13 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                                     <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
-                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "37%"}} >
+                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "37%", animationName: "animation2-b"}} >
                                 <SnowyCloud width={type === "forecast" ? 32 : 75} />
                             </div>
-                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "50%"}} >
+                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "50%", animationName: "animation3-b"}} >
                                 <SnowyCloud width={type === "forecast" ? 32 : 75} />
                             </div>
-                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "60%"}} >
+                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "60%", animationName: "animation4-a"}} >
                                 <SnowyCloud width={type === "forecast" ? 32 : 75} />
                             </div>
                         </>
@@ -715,13 +715,13 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                                     <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
-                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "37%"}} >
+                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "37%", animationName: "animation2-b"}} >
                                 <SnowyCloud width={type === "forecast" ? 40 : 100} />
                             </div>
-                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "50%"}} >
+                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "50%", animationName: "animation3-b"}} >
                                 <SnowyCloud width={type === "forecast" ? 40 : 100} />
                             </div>
-                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "60%"}} >
+                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "60%", animationName: "animation4-a"}} >
                                 <SnowyCloud width={type === "forecast" ? 40 : 100} />
                             </div>
                         </>
@@ -735,13 +735,13 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                                     <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
-                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "37%"}} >
+                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "37%", animationName: "animation2-b"}} >
                                 <SnowyCloud width={type === "forecast" ? 32 : 75} />
                             </div>
-                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "50%"}} >
+                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "50%", animationName: "animation3-b"}} >
                                 <PelletCloud width={type === "forecast" ? 32 : 75} />
                             </div>
-                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "60%"}} >
+                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "60%", animationName: "animation4-a"}} >
                                 <SnowyCloud width={type === "forecast" ? 32 : 75} />
                             </div>
                         </>
@@ -755,13 +755,13 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                                     <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
-                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "37%"}} >
+                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "37%", animationName: "animation2-b"}} >
                                 <SnowyCloud width={type === "forecast" ? 40 : 100} />
                             </div>
-                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "50%"}} >
+                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "50%", animationName: "animation3-b"}} >
                                 <SnowyCloud width={type === "forecast" ? 40 : 100} />
                             </div>
-                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "60%"}} >
+                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "60%", animationName: "animation4-a"}} >
                                 <SnowyCloud width={type === "forecast" ? 40 : 100} />
                             </div>
                         </>
@@ -775,10 +775,10 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                                     <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
-                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "50%"}} >
+                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "50%", animationName: "animation2-b"}} >
                                 <RainyCloud width={type === "forecast" ? 40 : 80} />
                             </div>
-                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "48%"}} >
+                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "48%", animationName: "animation3-b"}} >
                                     {
                                         !isDay ?
                                         <Thunder width={type === "forecast" ? 15 : 45} color1="#ffffff" color2="#6e1bde" />
@@ -797,13 +797,13 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                                     <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
-                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "60%"}} >
+                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "60%", animationName: "animation2-b"}} >
                                 <RainyCloud width={type === "forecast" ? 40 : 100} />
                             </div>
-                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "40%"}} >
+                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "40%", animationName: "animation3-b"}} >
                                 <SnowyCloud width={type === "forecast" ? 40 : 100} />
                             </div>
-                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "58%", zIndex: "2"}} >
+                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "58%", zIndex: "2", animationName: "animation4-a"}} >
                                     {
                                         !isDay ?
                                         <Thunder width={type === "forecast" ? 15 : 45} color1="#ffffff" color2="#6e1bde" />
@@ -822,10 +822,10 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                                     <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
-                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "50%"}} >
+                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "50%", animationName: "animation2-b"}} >
                                 <SnowyCloud width={type === "forecast" ? 40 : 100} />
                             </div>
-                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "48%", zIndex: "0"}} >
+                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "48%", zIndex: "0", animationName: "animation3-b"}} >
                                     {
                                         !isDay ?
                                         <Thunder width={type === "forecast" ? 15 : 45} color1="#ffffff" color2="#6e1bde" />
@@ -844,13 +844,13 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                                     <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
-                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "60%"}} >
+                            <div className="icon-2" style={{top: type === "forecast" ? "70%" : "30%", left: "60%", animationName: "animation2-b"}} >
                                 <SnowyCloud width={type === "forecast" ? 40 : 100} />
                             </div>
-                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "40%"}} >
+                            <div className="icon-3" style={{top: type === "forecast" ? "75%" : "35%", left: "40%", animationName: "animation3-b"}} >
                                 <SnowyCloud width={type === "forecast" ? 40 : 100} />
                             </div>
-                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "58%", zIndex: "0"}} >
+                            <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "58%", zIndex: "0", animationName: "animation4-a"}} >
                                     {
                                         !isDay ?
                                         <Thunder width={type === "forecast" ? 15 : 45} color1="#ffffff" color2="#6e1bde" />

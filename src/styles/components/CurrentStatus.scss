@@ -28,15 +28,15 @@
         }
 
         .icon-2 {
-            animation: animation2 1.5s infinite linear;
+            animation: animation2-a 1.5s infinite linear;
         }
 
         .icon-3 {
-            animation: animation3 1.5s infinite linear;
+            animation: animation3-a 1.5s infinite linear;
         }
 
         .icon-4 {
-            animation: animation2 1.5s infinite linear;
+            animation: animation2-a 1.5s infinite linear;
         }
     }
     // border: 1px solid white;
@@ -67,7 +67,7 @@
     .forecast-status {
         text-align: center;
         position: absolute;
-        top: 50%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
 
@@ -135,7 +135,7 @@
     }
 }
 
-@keyframes animation2 {
+@keyframes animation2-a {
     0% {
         left: 45%
     }
@@ -157,7 +157,29 @@
     }
 }
 
-@keyframes animation3 {
+@keyframes animation2-b {
+    0% {
+        left: 37%
+    }
+
+    25% {
+        left: 32%;
+    }
+
+    50% {
+        left: 37%;
+    }
+
+    75% {
+        left: 42%;
+    }
+
+    100% {
+        left: 37%;
+    }
+}
+
+@keyframes animation3-a {
     0% {
         left: 55%
     }
@@ -176,5 +198,49 @@
 
     100% {
         left: 55%;
+    }
+}
+
+@keyframes animation3-b {
+    0% {
+        left: 50%
+    }
+
+    25% {
+        left: 55%;
+    }
+
+    50% {
+        left: 50%;
+    }
+
+    75% {
+        left: 45%;
+    }
+
+    100% {
+        left: 50%;
+    }
+}
+
+@keyframes animation4-a {
+    0% {
+        left: 60%
+    }
+
+    25% {
+        left: 55%;
+    }
+
+    50% {
+        left: 60%;
+    }
+
+    75% {
+        left: 65%;
+    }
+
+    100% {
+        left: 60%;
     }
 }

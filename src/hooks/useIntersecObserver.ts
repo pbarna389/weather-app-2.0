@@ -9,7 +9,6 @@ export const useIntersecObserver = (setState: React.Dispatch<React.SetStateActio
         if (entry.isIntersecting) {
             setState(entry.isIntersecting);
             setShown(true);
-            console.log(entry);
         } else return;
     }
 
