@@ -6,6 +6,7 @@
     justify-content: flex-end;
     flex-direction: column;
     height: 22rem;
+    transition: scale 0.3s ease-in;
 
     p {
         font-size: 0.6rem;
@@ -18,6 +19,8 @@
     }
 
     &:hover {
+        scale: 1.05;
+
         .status-wrapper {
             opacity: 1;
             height: 5rem;

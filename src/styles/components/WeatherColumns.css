@@ -4,6 +4,7 @@
   justify-content: flex-end;
   flex-direction: column;
   height: 22rem;
+  transition: scale 0.3s ease-in;
 }
 .column-wrapper p {
   font-size: 0.6rem;
@@ -14,6 +15,9 @@
   .column-wrapper p {
     font-size: 0.3rem;
   }
+}
+.column-wrapper:hover {
+  scale: 1.05;
 }
 .column-wrapper:hover .status-wrapper {
   opacity: 1;
