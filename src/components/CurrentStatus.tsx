@@ -383,7 +383,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                                 }
                             </div>
                             <div className="icon-2" style={{top: type === "forecast" ? "55%" : "30%", left: "37%"}} >
-                                <RainyCloud width={125} />
+                                <RainyCloud width={type === "forecast" ? 40 : 100} />
                             </div>
                             <div className="icon-3" style={{top: type === "forecast" ? "60%" : "35%", left: "50%"}} >
                                 <RainyCloud width={type === "forecast" ? 40 : 100} />
