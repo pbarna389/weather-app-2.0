@@ -232,7 +232,7 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                             <div className="icon-2" style={{top: type === "forecast" ? "55%" : "30%", left: "60%"}} >
                                 <Fog width={type === "forecast" ? 42 : 105} />
                             </div>
-                            <div className="icon-3" style={{top: type === "forecast" ? "0%" : "35%", left: "42%", zIndex:"3"}} >
+                            <div className="icon-3" style={{top: type === "forecast" ? "55%" : "35%", left: "42%", zIndex:"3"}} >
                                 <Fog width={type === "forecast" ? 45 : 110} />
                             </div>                              
                         </>
@@ -246,10 +246,10 @@ const CurrentStatus:React.FC<ICurrentStatus> = ({ code, isDay, type, status }):J
                                     <Sun width={type === "forecast" ? 40 : 150} />
                                 }
                             </div>
-                            <div className="icon-2" style={{top: type === "forecast" ? "0%" : "30%", left: "60%", opacity: "0.6"}} >
+                            <div className="icon-2" style={{top: type === "forecast" ? "55%" : "30%", left: "60%", opacity: "0.6"}} >
                                 <Fog width={type === "forecast" ? 40 : 100} />
                             </div>
-                            <div className="icon-3" style={{top: type === "forecast" ? "0%" : "35%", left: "42%", zIndex:"3", opacity: "0.6"}} >
+                            <div className="icon-3" style={{top: type === "forecast" ? "55%" : "35%", left: "42%", zIndex:"3", opacity: "0.6"}} >
                                 <Fog width={type === "forecast" ? 40 : 100} />
                             </div>
                             <div className="icon-4" style={{top: type === "forecast" ? "80%" : "42%", left: "50%", zIndex:"3", opacity: "0.95"}} >
