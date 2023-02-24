@@ -1,3 +1,5 @@
+@use "../shared/shared";
+
 .input-wrapper {
     display: flex;
     align-items: center;
@@ -53,6 +55,14 @@
             outline: none;
             opacity: 1;
         }
+
+        @include shared.desktops {
+            width: 20rem;
+        }
+
+        @include shared.uhd-desktops {
+            width: 25rem;
+        }
     }
     
     .autocomplete {
@@ -62,6 +72,14 @@
         top: 2.7rem;
         border-radius: 5px;
         z-index: 1000000;
+
+        @include shared.desktops {
+            width: 22.6rem;
+        }
+
+        @include shared.uhd-desktops {
+            width: 27.6rem;
+        }
         
         p {
             transition: all 0.5s ease-in;

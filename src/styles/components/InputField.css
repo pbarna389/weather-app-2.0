@@ -47,6 +47,16 @@
   outline: none;
   opacity: 1;
 }
+@media (min-width: 1280px) and (max-width: 1980px) {
+  .input-wrapper input {
+    width: 20rem;
+  }
+}
+@media (min-width: 1980px) {
+  .input-wrapper input {
+    width: 25rem;
+  }
+}
 .input-wrapper .autocomplete {
   position: absolute;
   background-color: white;
@@ -54,6 +64,16 @@
   top: 2.7rem;
   border-radius: 5px;
   z-index: 1000000;
+}
+@media (min-width: 1280px) and (max-width: 1980px) {
+  .input-wrapper .autocomplete {
+    width: 22.6rem;
+  }
+}
+@media (min-width: 1980px) {
+  .input-wrapper .autocomplete {
+    width: 27.6rem;
+  }
 }
 .input-wrapper .autocomplete p {
   transition: all 0.5s ease-in;
