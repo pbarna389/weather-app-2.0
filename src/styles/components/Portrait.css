@@ -5,8 +5,7 @@
   overflow: hidden;
   border-radius: 50%;
 }
-
-.portrait {
+.portrait-wrapper .portrait {
   position: absolute;
   background-repeat: no-repeat;
   height: inherit;
@@ -17,22 +16,22 @@
   opacity: 0.8;
   transition: all 0.5s ease-in;
 }
-.portrait:hover {
+.portrait-wrapper .portrait:hover {
   opacity: 1;
   scale: 1.3;
 }
-.portrait.no-img {
+.portrait-wrapper .portrait.no-img {
   display: flex;
   justify-content: center;
   align-items: center;
   rotate: 45deg;
   transition: all 0.2s ease-in;
 }
-.portrait.no-img:hover {
+.portrait-wrapper .portrait.no-img:hover {
   scale: 1;
 }
 @media (min-width: 320px) and (max-width: 640px) {
-  .portrait.no-img {
+  .portrait-wrapper .portrait.no-img {
     font-size: 0.9rem;
   }
 }/*# sourceMappingURL=Portrait.css.map */
